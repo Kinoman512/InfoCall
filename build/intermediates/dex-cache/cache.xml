@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/iconics-core/2.5.8/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="93e12ffa27e468e78d703173853ae71688028628">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-iconics-core-2.5.8_8c37f0c0b155ca6163c2ed2164754421aac80634/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.makeramen/roundedimageview/2.2.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="814fc0c3ec69a944add398217d90077301501a74">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.makeramen-roundedimageview-2.2.1_aaaba790c490fa751c9e579dba8c97281cfa9cc6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.pnikosis/materialish-progress/1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.pnikosis-materialish-progress-1.0_45248e4012f211a5cde545f0c1577a6919cb10e0/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="aeccb63f5f454f97ea5c015f2938f013578d7fb5">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_7e071b8ecbdd586910b1cc44f915c8fe92e4525b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.2.0_c978febda6356d3e3e62ef7958c81495699cdca9/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="3e10cc0580f63de0f0f16eb4954d80916e850667">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_f2a2342ea946e5e508e291842567608881f1717e/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/androidstudio-sdks/extras/android/m2repository/com/android/support/support-annotations/23.2.0/support-annotations-23.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.2.0_241727949b29a797a687367565dc6623a77f9060/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/cn.pedant.sweetalert-library-1.3_cc5157cd7e64f3074527651c3c13bd4cf1cd3268/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/libs/internal_impl-23.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.2.0_c7a21675042d01780b3f22ffc145843128d3d198/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/materialdrawer/5.0.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="74ee96cce6f2dfbd073cb2d716d97923c37a571a">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-materialdrawer-5.0.3_11626820bd394ac92ca2b28c0a43166c62992be7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_cc0bebe3b788035b8f0a70a161250b309615c19c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.6.1/b9d63507329a7178e026fc334f87587ee5070ac5/gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.6.1_06db4dbd893c19ef3b975eb1fce06c1d9f3ada2c/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.2.0_2a715eaa26cf35f23e7143cce017bf1156292b91/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/material-design-iconic-typeface/2.2.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="27bd073c1d188457050a9169e7dfe03ea0271dbc">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-material-design-iconic-typeface-2.2.0.1_f1cfa798565103c64abc45d1712bce308aeba539/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.1.1_f4f58cb75c672025893f313e47fd25c8bdeffb81/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/fastadapter/1.1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="fa37fd35570e54040b26dfb041f4944799d14a99">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-fastadapter-1.1.0_9fa5adc8578c020851d6415d5f5f03df465969eb/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/google-material-typeface/2.2.0.1.original/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="53e176889382956e3910232309ab7056730553e8">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-google-material-typeface-2.2.0.1.original_47ab673c00ca9b6f80cfd527024576c58d927828/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/.gradle/caches/modules-2/files-2.1/com.michaelpardo/activeandroid/3.1.0-SNAPSHOT/4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08/activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/activeandroid-3.1.0-SNAPSHOT_3b9c9a9880fba3ede02e4c4f21e8a6b5d38b7c82/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.2.0_0b7d8be98dc6221c5cda65259d2e32a4f366839f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.5.2/ecf534dba3a8446ce84cbb797d314763be212a68/glide-3.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.5.2_9d7b696438ec53471fe1ad613c6321bde7c2698d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.2.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.2.0_23f12fded7ead0f8322148a6d293e75b60b4e6f4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/.gradle/caches/modules-2/files-2.1/org.jsoup/jsoup/1.7.2/d7e275ba05aa380ca254f72d0c0ffebaedc3adcf/jsoup-1.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d7e275ba05aa380ca254f72d0c0ffebaedc3adcf">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/jsoup-1.7.2_a64c8d4290dfa9b0e15cb1715ef34f5c15ed38c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/fontawesome-typeface/4.5.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="9ec06b192478fcc1acd79f399926c48444c02f86">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-fontawesome-typeface-4.5.0.1_73e00860661b350c66fb3c265b6363fb70232a99/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.1.1_bc6d56dd6a8ec8e3296e516e4ddc24643a1813f1/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/exploded-aar/com.mikepenz/materialize/0.8.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0654a62e5c678e80a952149286b16e754de5a74e">
+        <dex dex="/Users/kaman/AndroidStudioProjects/infocall/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-materialize-0.8.2_4c3a65503a9c3d3aeefc8c4fad4c9a67f3aa4a12/classes.dex" />
+    </item>
+
+</items>

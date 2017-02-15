@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="json_array">{
+  "listID": 12345,
+  "contents": [
+    {
+      "userID": 1,
+      "tel": "79281511978",
+      "userName": "Andrey",
+      "type": "Seller",
+      "comment": "information1"
+    },
+    {
+      "userID": 2,
+      "tel": "79081906207",
+      "userName": "Dima",
+      "type": "Trader",
+      "comment": "important_meeting"
+    },
+    {
+      "userID": 3,
+      "tel": "79185558077",
+      "userName": "Kolesnikov",
+      "type": "Boss",
+      "comment": "this_Comment"
+    }
+  ],
+  "orderCompleted": true
+}
+</string>
+</resources>
