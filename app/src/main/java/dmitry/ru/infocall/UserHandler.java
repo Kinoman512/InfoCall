@@ -60,8 +60,7 @@ public class UserHandler {
 
     public Boolean isSave = false;
     int x = 0;
-
-
+    public boolean needSaveInJourney;
 
 
     public UserHandler(String phone, Context context, boolean isLockedScreen) {
@@ -288,8 +287,9 @@ public class UserHandler {
                         if (u) {
                             list.add(data2);
                         }
-
-                        FileSave.save(context, list);
+                        if(needSaveInJourney){
+                            FileSave.save(context, list);
+                        }
                     }
 
                     MyDrawer.showWindow(context, phone, data ,this.isLockedScreen);

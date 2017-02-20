@@ -27,8 +27,12 @@ public class ContactService {
     public static List<TaskBean> listtask = new ArrayList<>();
 
     public static boolean startServicesToGetInfo(UserHandler uh) {
-        uh.phone = uh.phone.replaceAll("\\+|\\-", "");
+        return  startServicesToGetInfo(uh,true);
+    }
 
+    public static boolean startServicesToGetInfo(UserHandler uh, boolean needSaveInJourney) {
+        uh.phone = uh.phone.replaceAll("\\+|\\-", "");
+        uh.needSaveInJourney = needSaveInJourney;
         Context con = uh.context;
         String phone = uh.phone;
         boolean isEmptyNumber;

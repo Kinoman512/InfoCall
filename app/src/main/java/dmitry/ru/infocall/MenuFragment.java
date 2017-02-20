@@ -4,36 +4,20 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.LayoutInflaterCompat;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mikepenz.iconics.context.IconicsContextWrapper;
-import com.mikepenz.iconics.context.IconicsLayoutInflater;
-
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.StreamCorruptedException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import dmitry.ru.infocall.service.CallReceiver;
 import dmitry.ru.infocall.utils.ContactService;
-import dmitry.ru.infocall.utils.DrawPanel;
 import dmitry.ru.infocall.utils.Setting;
-import dmitry.ru.infocall.utils.contact.ContactUtil;
 import dmitry.ru.myapplication.R;
 
 /**
@@ -118,8 +102,15 @@ public class MenuFragment extends Fragment {
 //                Sp2AllTask task = new Sp2AllTask();
                 // HtmlwebTask task = new HtmlwebTask();
 //                UserHandler uh = new UserHandler("79044404193", MenuFragment.this.inflater.getContext() );
+//                UserHandler uh = new UserHandler("79081906207", MenuFragment.this.inflater.getContext(),false );
+
+//                LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+//                map.put("number", "123asd");
+//                MyDrawer.showWindow(context, "79044404193", map ,true);
+
+
                 UserHandler uh = new UserHandler("79081906207", MenuFragment.this.inflater.getContext(),false );
-                ContactService.startServicesToGetInfo(uh);
+                ContactService.startServicesToGetInfo(uh, false);
 //                List<LinkedHashMap<String, String>> list = ContactUtil.getCallLog( MenuFragment.this.inflater.getContext());
 
 

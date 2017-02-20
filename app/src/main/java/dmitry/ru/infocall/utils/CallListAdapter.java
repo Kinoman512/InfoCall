@@ -46,6 +46,10 @@ public class CallListAdapter extends BaseAdapter {
     public CallListAdapter(Context context, LinkedHashMap<String, String> linkedHashMap, int m) {
         this.context = context;
          map = linkedHashMap;
+
+        if(map == null){
+            map = new LinkedHashMap<>();
+        }
         this.mode = m;
 
 

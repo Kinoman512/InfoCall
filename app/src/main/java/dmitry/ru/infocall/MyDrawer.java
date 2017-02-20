@@ -14,13 +14,10 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.LinkedHashMap;
 
 import dmitry.ru.infocall.service.CallReceiver;
-import dmitry.ru.infocall.utils.CallListAdapter;
-import dmitry.ru.infocall.utils.contact.ContactUtil;
 import dmitry.ru.myapplication.R;
 
 /**
@@ -103,6 +100,8 @@ public class MyDrawer {
 
 
         myView = (DrawView)  windowLayout.findViewById(R.id.MyView);
+
+
         ImageView fl = (ImageView) windowLayout.findViewById(R.id.myBack);
 
         fl.setBackgroundColor(121);

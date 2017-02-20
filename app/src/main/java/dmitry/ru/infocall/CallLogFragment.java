@@ -25,6 +25,8 @@ import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.infocall.utils.contact.ContactUtil;
 import dmitry.ru.myapplication.R;
 
+import static dmitry.ru.myapplication.R.id.callList;
+
 /**
  * Created by Dmitry on 12.06.2016.
  */
@@ -34,6 +36,8 @@ public class CallLogFragment extends Fragment {
     LayoutInflater inflater;
     Context context;
     List<LinkedHashMap<String, String>> list;
+    private TextView txt_jorny;
+    private TextView txt_no_records;
 
     public CallLogFragment(List<LinkedHashMap<String, String>> l) {
         list = l;
@@ -48,7 +52,15 @@ public class CallLogFragment extends Fragment {
         this.context = CallLogFragment.this.inflater.getContext();
         Setting.init(inflater.getContext());
 
-        final ListView lw = (ListView) rootView.findViewById(R.id.callList);
+
+        //************************************* Переделать
+        final ListView lw = (ListView) rootView.findViewById(callList);
+        txt_jorny = (TextView) rootView.findViewById(R.id.txt_jorny);
+        txt_no_records = (TextView) rootView.findViewById(R.id.txt_no_records);
+
+        if(list.size() != 0){
+            txt_no_records.setVisibility(View.GONE);
+        }
 
 
         final  String[] strs = new String[list.size()];
@@ -65,6 +77,7 @@ public class CallLogFragment extends Fragment {
 
 
         final CallLogAdapter adapter;
+
 
         adapter = new CallLogAdapter(context, list);
 

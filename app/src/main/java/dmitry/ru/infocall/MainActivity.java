@@ -1,51 +1,26 @@
 package dmitry.ru.infocall;
 
-import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mikepenz.iconics.context.IconicsContextWrapper;
 import com.mikepenz.iconics.context.IconicsLayoutInflater;
-import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
+import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
-import dmitry.ru.infocall.service.CallReceiver;
-import dmitry.ru.infocall.utils.ContactService;
 import dmitry.ru.infocall.utils.DrawPanel;
 import dmitry.ru.infocall.utils.Setting;
-import dmitry.ru.infocall.utils.contact.ContactUtil;
 import dmitry.ru.myapplication.R;
-
-import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -66,6 +41,10 @@ public class MainActivity extends AppCompatActivity {
 
         filedir =  getFilesDir().getPath().toString();
         fragmentManager = getFragmentManager();
+
+        List<LinkedHashMap<String, String>> list2 = FileSave.read(this);
+//        MainActivity.setFragment(new CallLogFragment(list2), false);
+
         setCurrentFragment(new MenuFragment(), false);
         Setting.init(this);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
