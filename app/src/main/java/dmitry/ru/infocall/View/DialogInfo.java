@@ -1,9 +1,14 @@
 package dmitry.ru.infocall.View;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -34,6 +39,8 @@ public class DialogInfo   extends Dialog implements
     public Button yes, no;
     public ListView listView;
     private TextView txt_name;
+    private Button btn_call;
+    private Button btn_sms;
 
     public DialogInfo(Context a, LinkedHashMap<String, String> map) {
         super(a);
@@ -50,6 +57,38 @@ public class DialogInfo   extends Dialog implements
 
         yes = (Button) findViewById(R.id.btn_yes);
         no = (Button) findViewById(R.id.btn_no);
+
+        btn_call = (Button) findViewById(R.id.btn_call);
+        btn_sms = (Button) findViewById(R.id.btn_sms);
+
+        btn_call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneNumber = "79081906207";
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+                if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                context.startActivity(intent);
+            }
+        });
+
+
+        btn_sms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                String outCipherText= "";//editTextSMSCipherText.getText().toString();
+                String phoneNumber=  "79081906207";
+
+                String uri= "smsto:"+phoneNumber;
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(uri));
+                intent.putExtra("sms_body", outCipherText);
+                intent.putExtra("compose_mode", true);
+                context.startActivity(intent);
+//                    finish();
+            }
+        });
         txt_name = (TextView) findViewById(R.id.txt_name);
         listView = (ListView) findViewById(R.id.list_number_data);
         final ImageView image_avatar = (ImageView) findViewById(R.id.image_avatar);

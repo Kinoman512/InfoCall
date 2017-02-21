@@ -30,6 +30,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\User.USER-PK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_29af8efaf0b91f2a43a64ae4a523b05d6a44387f.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -70,7 +79,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="3d2893ddfdd90f7adfad2aa346bb045bf197e779">
+        sha1="f286e86deae6c09145ca9a619cca9f2eb4fbec11">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run_284cddc056916945229aa5a335897c6aab18c65c.jar" />
     </item>
     <item
@@ -99,6 +108,15 @@
         revision="23.0.2"
         sha1="27bd073c1d188457050a9169e7dfe03ea0271dbc">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-material-design-iconic-typeface-2.2.0.1_ca986fbe9f82ef19a3554b73aff30a37f218d1f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.1.0_6c0cc0fb98bdbee4dfba69441b326d6833aa1779.jar" />
     </item>
     <item
         is-multidex="false"
@@ -156,15 +174,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\User.USER-PK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0_11254771220c526cf8690c8463efb6cecc4fe472.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -205,7 +214,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="56ecf3828b8cb1047b52b925f77ef53a4a6710f5">
+        sha1="c1e53e0acd9b3af13f71799e201eeec1bfaac883">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b817cf27a2833a0b1e18bf9aacbe9fe1498822d8.jar" />
     </item>
     <item

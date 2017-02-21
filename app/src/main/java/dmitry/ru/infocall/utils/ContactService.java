@@ -27,12 +27,14 @@ public class ContactService {
     public static List<TaskBean> listtask = new ArrayList<>();
 
     public static boolean startServicesToGetInfo(UserHandler uh) {
-        return  startServicesToGetInfo(uh,false);
+        return  startServicesToGetInfo(uh,false, true);
     }
 
-    public static boolean startServicesToGetInfo(UserHandler uh, boolean needSaveInJourney) {
+    public static boolean startServicesToGetInfo(UserHandler uh, boolean needSaveInJourney, boolean needShowWindow) {
         uh.phone = uh.phone.replaceAll("\\+|\\-", "");
         uh.needSaveInJourney = needSaveInJourney;
+        uh.needShowWindow = needShowWindow;
+
         Context con = uh.context;
         String phone = uh.phone;
         boolean isEmptyNumber;
@@ -43,13 +45,13 @@ public class ContactService {
         isEmptyNumber = ContactUtil.getContactInfo(con, phone).isEmpty();
         Log.d("ContactService", "isEmptyNumber = " + isEmptyNumber);
 
-        if(isEmptyNumber){
+        if(isEmptyNumber || needShowWindow || !needSaveInJourney){
             phone = "8" + phone.substring(1);
             Log.d("ContactService", phone);
             isEmptyNumber = ContactUtil.getContactInfo(con, phone).isEmpty();
             Log.d("ContactService", "isEmptyNumber = " + isEmptyNumber);
         }
-        if(!isEmptyNumber){
+        if(!isEmptyNumber && !needShowWindow && !needSaveInJourney){
             Log.d("ContactService", "there is number, dont need a running tasks");
             if(uh.isSave) {
                 //MyAlert.closeSavingAlert(false);

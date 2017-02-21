@@ -111,7 +111,7 @@ public class MenuFragment extends Fragment {
 
 
                 UserHandler uh = new UserHandler("79081906207", MenuFragment.this.inflater.getContext(),false );
-                ContactService.startServicesToGetInfo(uh, false);
+                ContactService.startServicesToGetInfo(uh, false, true);
 //                List<LinkedHashMap<String, String>> list = ContactUtil.getCallLog( MenuFragment.this.inflater.getContext());
 
 

@@ -62,6 +62,17 @@ public class UserHandler {
     public Boolean isSave = false;
     int x = 0;
     public boolean needSaveInJourney;
+    public boolean needShowWindow;
+
+    public interface OnGetDataListner{
+        public void OnGetData(LinkedHashMap<String, String> map);
+    }
+
+    OnGetDataListner getDatalistner;
+
+    public void setGetDatalistner(OnGetDataListner l){
+        getDatalistner = l;
+    }
 
 
     public UserHandler(String phone, Context context, boolean isLockedScreen) {
@@ -310,12 +321,19 @@ public class UserHandler {
                         if (u) {
                             list.add(data2);
                         }
+
+                        if  (getDatalistner != null){
+                            getDatalistner.OnGetData(data);
+                        }
+
                         if(needSaveInJourney){
                             FileSave.save(context, list);
                         }
                     }
 
-                    MyDrawer.showWindow(context, data ,this.isLockedScreen);
+                    if(needShowWindow){
+                        MyDrawer.showWindow(context, data ,this.isLockedScreen);
+                    }
                 }
 
                 listtask.remove(e);
@@ -323,6 +341,8 @@ public class UserHandler {
             }
         }
     }
+
+
 
     public class SweetAlertHandler extends Handler {
 

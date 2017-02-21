@@ -13,7 +13,7 @@
         android:id="@+id/action_search"
         android:orderInCategory="200"
         android:title="Search"
-        android:icon="@drawable/sp"
+        android:icon="@drawable/ic_search_black_24dp"
         app:showAsAction="ifRoom"
         ></item>
 

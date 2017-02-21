@@ -8,12 +8,42 @@
     android:gravity="center">
 
 
-    <ImageView
+    <RelativeLayout
+        android:orientation="horizontal"
         android:layout_width="396dp"
-        android:layout_height="123dp"
-        app:srcCompat="@drawable/oval"
-        android:id="@+id/image_avatar"
-        android:layout_margin="6dp" />
+        android:layout_height="143dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            app:srcCompat="@drawable/oval"
+            android:id="@+id/image_avatar"
+            android:layout_weight="1"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginStart="22dp"
+            android:id="@+id/btn_call"
+            android:background="@drawable/ic_call_black_24dp"
+            android:layout_alignTop="@+id/image_avatar"
+            android:layout_toRightOf="@+id/image_avatar"
+            android:layout_toEndOf="@+id/image_avatar"
+            android:layout_marginTop="11dp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_sms"
+            android:background="@drawable/ic_textsms_black_24dp"
+            android:layout_below="@+id/btn_call"
+            android:layout_alignLeft="@+id/btn_call"
+            android:layout_alignStart="@+id/btn_call"
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -26,9 +56,9 @@
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/list_number_data"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:layout_height="wrap_content" />
 
     <TextView
         android:text="Вы хотите сохранить контакт?"

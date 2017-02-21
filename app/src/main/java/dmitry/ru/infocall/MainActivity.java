@@ -5,6 +5,8 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -20,6 +22,8 @@ import com.mikepenz.iconics.context.IconicsLayoutInflater;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import cn.pedant.SweetAlert.SweetAlertDialog;
+import dmitry.ru.infocall.View.DialogSearch;
 import dmitry.ru.infocall.utils.DrawPanel;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.myapplication.R;
@@ -91,6 +95,45 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void beginSearch() {
+        DialogSearch ds = new DialogSearch(this);
+        ds.show();
+    }
+
+    private void aboutProgram() {
+
+
+
+        String version = getResources().getString(R.string.app_name) + "\n" +  getResources().getString(R.string.version_text) + " " + getVersion();
+        String about = getResources().getString(R.string.about);
+        new SweetAlertDialog(MainActivity.this)
+                .setTitleText(about)
+                .setContentText(
+                        version + "\n"
+                )
+                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                    @Override
+                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                        sweetAlertDialog.dismissWithAnimation();
+                    }
+                })
+                .show();
+
+    }
+
+
+    public String getVersion() {
+
+        PackageInfo pInfo = null;
+        try {
+            pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        String version = pInfo.versionName;
+
+        return version;
+    }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
