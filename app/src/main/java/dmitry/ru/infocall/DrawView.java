@@ -153,7 +153,8 @@ public class DrawView extends View {
 
                     mPosX += dx;
                     mPosY += dy;
-                    onMoveListner.onMove(mPosX, mPosY);
+                    if(onMoveListner!= null)
+                        onMoveListner.onMove(mPosX, mPosY);
 
                     Setting.setFuild(windowsScaleFactor, mScaleFactor);
 

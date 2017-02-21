@@ -1,6 +1,5 @@
 package dmitry.ru.infocall.utils.net.helper;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -10,7 +9,6 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
-import org.jsoup.nodes.Document;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -28,7 +26,7 @@ import java.util.concurrent.Executors;
 import dmitry.ru.infocall.Cache;
 import dmitry.ru.infocall.Serializer;
 import dmitry.ru.infocall.UserHandler;
-import dmitry.ru.infocall.utils.net.tasks.Sp2All;
+import dmitry.ru.infocall.tasks.Sp2All;
 
 /**
  * Created by Dmitry on 13.02.2016.

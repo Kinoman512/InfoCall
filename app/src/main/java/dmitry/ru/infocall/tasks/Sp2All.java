@@ -1,4 +1,4 @@
-package dmitry.ru.infocall.utils.net.tasks;
+package dmitry.ru.infocall.tasks;
 
 import android.os.AsyncTask;
 import android.os.Handler;

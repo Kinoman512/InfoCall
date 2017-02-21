@@ -1,4 +1,4 @@
-package dmitry.ru.infocall.utils.net.tasks;
+package dmitry.ru.infocall.tasks;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;

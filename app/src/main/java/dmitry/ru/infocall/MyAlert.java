@@ -2,10 +2,8 @@ package dmitry.ru.infocall;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.widget.Toast;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
 import dmitry.ru.infocall.utils.ContactService;
@@ -80,25 +78,6 @@ public class MyAlert {
                 .show();
     }
 
-    public static  void closeSavingAlert(boolean isSaved){
-        if (savingAlert != null)
-                savingAlert.cancel();
 
-        if(isSaved){
-            SweetAlertDialog sa = new SweetAlertDialog(activity, MySweetAlertDialog.SUCCESS_TYPE);
-            sa.setTitleText("Сохранено!");
-            FileSave.delete(activity.getApplicationContext(), phone);
-
-            MainActivity.setFragment(new MenuFragment(), false);
-            MainActivity.setFragment(new CallLogFragment(FileSave.read(activity.getApplicationContext()) ), true);
-            sa.show();
-
-        }else{
-            SweetAlertDialog sa = new SweetAlertDialog(activity, MySweetAlertDialog.ERROR_TYPE);
-            sa.setTitleText("Ошибка сохранения!");
-            sa.show();
-        }
-
-    }
 
 }

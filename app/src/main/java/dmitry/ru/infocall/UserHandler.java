@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,10 +22,11 @@ import java.util.List;
 import java.util.Map;
 
 import dmitry.ru.infocall.utils.Setting;
-import dmitry.ru.infocall.utils.net.tasks.DownloadAvatarTask;
+import dmitry.ru.infocall.tasks.DownloadAvatarTask;
 import dmitry.ru.infocall.utils.net.helper.NetHtml;
-import dmitry.ru.infocall.utils.net.tasks.SaveContactTask;
-import dmitry.ru.infocall.utils.net.tasks.Sp2All;
+import dmitry.ru.infocall.tasks.OnAvatarGetListner;
+import dmitry.ru.infocall.tasks.SaveContactTask;
+import dmitry.ru.infocall.tasks.Sp2All;
 
 /**
  * Created by Dmitry on 13.02.2016.
@@ -40,7 +42,6 @@ public class UserHandler {
     public static final int NOT_FOUND = 5;
     public static List<TaskBean> listtask = new ArrayList<>();
 
-    public final AvatarHandler avatarHandler = new AvatarHandler();
     public final LoginHandler loginhandler = new LoginHandler();
     public final Sp2AllHandler sphandler = new Sp2AllHandler();
     public final HtmlWebHandler htmlWebHandler = new HtmlWebHandler();
@@ -182,6 +183,19 @@ public class UserHandler {
         return null;
     }
 
+   public OnAvatarGetListner downloadAvatarListner = new OnAvatarGetListner() {
+       @Override
+       public void OnFinishDownload(Bitmap obj) {
+           if (obj != null) {
+               // CacheImage.addBitmapToMemoryCache(phone,obj);
+               // Log.d("UserHandler", "Try to replace avatar  ");
+               MyDrawer.setAvatar(obj);
+           }
+       }
+
+
+    };
+
     void extraOptions(String tag, LinkedHashMap<String, String> map) {
         if (isSave) {
             Log.d("UserHandler", "is save work! " + listtask.size() + map.toString());
@@ -190,9 +204,13 @@ public class UserHandler {
             if (listtask.size() <= 1) {
 
 
-                if ("".equals(map.get("name")) || null == map.get("name")) {
+                String name = data.get("name");
+
+                if (name == null  || name.isEmpty()) {
+
                     Log.d("UserHandler", "  there is'nt save  contact !" + data.toString());
-                    MyAlert.closeSavingAlert(false);
+
+                    Toast.makeText(context,"Ошибка при сохранении!", Toast.LENGTH_LONG).show();
 
                     Iterator it = listtask.iterator();
                     while (it.hasNext()) {
@@ -209,7 +227,9 @@ public class UserHandler {
                 Log.d("UserHandler", "  save  contact !" + data.toString());
                 forSave.putAll(data);
                 forSave.put("phone", this.phone);
+
                 SaveContactTask sc = new SaveContactTask();
+                sc.setOnFinishDownloadListner(downloadAvatarListner);
                 sc.execute(this);
 
 
@@ -258,9 +278,12 @@ public class UserHandler {
 
                     if (map.get("avatar") != null) {
                         avatarUrl = map.get("avatar");
-                        new DownloadAvatarTask().execute(this);
+
+                        DownloadAvatarTask downloadAvatarTask = new DownloadAvatarTask(context);
+                        downloadAvatarTask.setOnFinishDownloadListner(downloadAvatarListner);
+                        downloadAvatarTask.execute(avatarUrl);
                     }
-                    map.remove("avatar");
+                    //map.remove("avatar");
                     map.put("number", phone);
                     data.putAll(map);
                     Log.d("UserHandler", "show windows with  data");
@@ -292,7 +315,7 @@ public class UserHandler {
                         }
                     }
 
-                    MyDrawer.showWindow(context, phone, data ,this.isLockedScreen);
+                    MyDrawer.showWindow(context, data ,this.isLockedScreen);
                 }
 
                 listtask.remove(e);
@@ -308,9 +331,11 @@ public class UserHandler {
         public void handleMessage(Message msg) {
             Log.d("UserHandler", "SweetAlertHandler ");
             if (msg.what == OK) {
-                MyAlert.closeSavingAlert(true);
+                Toast.makeText(context,"Контакт сохранен", Toast.LENGTH_LONG).show();
+//                MyAlert.closeSavingAlert(true);
             } else {
-                MyAlert.closeSavingAlert(false);
+                Toast.makeText(context,"Ошибка при сохранении контакта", Toast.LENGTH_LONG).show();
+               // MyAlert.closeSavingAlert(false);
             }
 
         }
@@ -373,22 +398,7 @@ public class UserHandler {
         }
     }
 
-    public class AvatarHandler extends Handler {
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
 
-            if (msg.what == OK) {
-                Bitmap obj = (Bitmap) msg.obj;
-                if (obj != null) {
-
-                    CacheImage.addBitmapToMemoryCache(phone,obj);
-
-                    Log.d("UserHandler", "Try to replace avatar  ");
-                    MyDrawer.setAvatar(obj);
-                }
-            }
-        }
-    }
 
     public class Sp2AllHandler extends Handler {
 

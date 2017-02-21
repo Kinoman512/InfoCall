@@ -65,7 +65,7 @@ public class MyDrawer {
     }
 
 
-    public static void showWindow(final Context context, String phone, LinkedHashMap<String, String> map, boolean isLockedScreen) {
+    public static void showWindow(final Context context,  LinkedHashMap<String, String> map, boolean isLockedScreen) {
         if(map == null || map.isEmpty()){
             return;
         }
@@ -75,6 +75,7 @@ public class MyDrawer {
             rewrite(map);
             return;
         }
+
         windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         CallReceiver.context = context;
@@ -212,7 +213,7 @@ public class MyDrawer {
 
 
 
-
+        rewrite(map);
         windowManager.addView(windowLayout, params);
     }
 

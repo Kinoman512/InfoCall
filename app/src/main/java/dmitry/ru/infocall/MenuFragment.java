@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
@@ -152,20 +153,31 @@ public class MenuFragment extends Fragment {
             @Override
 
             public void onClick(View v) {
-                Log.d("CallService", "stop call service");
-                context.stopService(
-                        new Intent(context, CallReceiver.class));
-                MyDrawer.closeWindow();
+//                Log.d("CallService", "stop call service");
+//                context.stopService(
+//                        new Intent(context, CallReceiver.class));
+//                MyDrawer.closeWindow();
 
-                Toast.makeText(context, "Служба остановлена",
-                        Toast.LENGTH_SHORT).show();
+
             }
         });
 
         btnJ.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                List<LinkedHashMap<String, String>> list2 = FileSave.read(context);
+//                List<LinkedHashMap<String, String>> list2 = FileSave.read(context);
+                List<LinkedHashMap<String, String>> list2  = new ArrayList<LinkedHashMap<String, String>>();//FileSave.read(context);
+                LinkedHashMap<String, String> map = new LinkedHashMap<String, String>();
+                map.put("number", "79081906207");
+                map.put("name", "Dima Gribkov");
+                map.put("city:SP", "Город : Москва");
+                map.put("city:HTMLWEB", "Город : Ростов-на-Дону");
+                map.put("organization", "Руководитель");
+
+                map.put("avatar", "http://api.sp2all.ru//images/avatar/a100_115219.jpg?v=1479989942");
+
+                list2.add(map);
+
                 MainActivity.setFragment(new CallLogFragment(list2), true);
             }
         });

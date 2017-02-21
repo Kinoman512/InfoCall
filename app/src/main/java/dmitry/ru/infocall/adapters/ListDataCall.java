@@ -53,7 +53,7 @@ public class ListDataCall extends BaseAdapter {
             String key=(String)myVeryOwnIterator.next();
             String value=(String)map.get(key);
 
-            if(key .equals( "name")){
+            if(key .equals( "name") || key .equals( "avatar")  ){
                 continue;
             }
             keys.add(key);

@@ -1,4 +1,4 @@
-package dmitry.ru.infocall.utils.net.tasks;
+package dmitry.ru.infocall.tasks;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -9,16 +9,23 @@ import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
-import dmitry.ru.infocall.MyAlert;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.utils.contact.ContactUtil;
 
-import static dmitry.ru.infocall.UserHandler.*;
+import static dmitry.ru.infocall.UserHandler.OK;
 
 /**
  * Created by Dmitry on 22.02.2016.
  */
 public class SaveContactTask  extends AsyncTask<UserHandler, Void, Void> {
+
+
+
+    OnAvatarGetListner  listner;
+
+    public void setOnFinishDownloadListner(OnAvatarGetListner listner){
+        this.listner = listner;
+    }
 
     @Override
     protected Void doInBackground(UserHandler... params) {
@@ -27,12 +34,13 @@ public class SaveContactTask  extends AsyncTask<UserHandler, Void, Void> {
         Log.d("SaveContactTask", "try to add new contact");
 
         try {
-            Log.d("SaveContactTask", "try to download image from  " + uh.forSave.get("avatar"));
 
             Bitmap bitmap = Picasso.with(uh.context)
                     .load(uh.forSave.get("avatar")).get();
-            Message.obtain(uh.avatarHandler, OK, bitmap).sendToTarget();
 
+
+//            Message.obtain(uh.avatarHandler, OK, bitmap).sendToTarget();
+            //listner.OnFinishDownload(bitmap);
 
             ContactUtil.addContact(uh.context, uh.forSave, phone, bitmap);
             Log.d("SaveContactTask", "the contact is added");

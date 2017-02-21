@@ -12,9 +12,9 @@ import dmitry.ru.infocall.MyDrawer;
 import dmitry.ru.infocall.TaskBean;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.utils.contact.ContactUtil;
-import dmitry.ru.infocall.utils.net.tasks.HtmlwebTask;
-import dmitry.ru.infocall.utils.net.tasks.NumbusterTask;
-import dmitry.ru.infocall.utils.net.tasks.Sp2All;
+import dmitry.ru.infocall.tasks.HtmlwebTask;
+import dmitry.ru.infocall.tasks.NumbusterTask;
+import dmitry.ru.infocall.tasks.Sp2All;
 
 /**
  * Created by Dmitry on 21.02.2016.
@@ -27,7 +27,7 @@ public class ContactService {
     public static List<TaskBean> listtask = new ArrayList<>();
 
     public static boolean startServicesToGetInfo(UserHandler uh) {
-        return  startServicesToGetInfo(uh,true);
+        return  startServicesToGetInfo(uh,false);
     }
 
     public static boolean startServicesToGetInfo(UserHandler uh, boolean needSaveInJourney) {

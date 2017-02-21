@@ -20,6 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import dmitry.ru.infocall.adapters.ListJournyAdapter;
 import dmitry.ru.infocall.service.CallReceiver;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.infocall.utils.contact.ContactUtil;
@@ -76,10 +77,10 @@ public class CallLogFragment extends Fragment {
 //        list.get(0);
 
 
-        final CallLogAdapter adapter;
+        final ListJournyAdapter adapter;
 
 
-        adapter = new CallLogAdapter(context, list);
+        adapter = new ListJournyAdapter(context, list);
 
         lw.setAdapter(adapter);
         lw.setOnItemClickListener(new AdapterView.OnItemClickListener() {
