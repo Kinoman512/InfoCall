@@ -23,8 +23,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import dmitry.ru.infocall.View.DialogSearch;
-import dmitry.ru.infocall.utils.DrawPanel;
+import dmitry.ru.infocall.view.DialogSearch;
+import dmitry.ru.infocall.fragment.MenuFragment;
+import dmitry.ru.infocall.view.DrawPanel;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.myapplication.R;
 

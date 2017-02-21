@@ -3,6 +3,15 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fontawesome-typeface\4.5.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="9ec06b192478fcc1acd79f399926c48444c02f86">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-fontawesome-typeface-4.5.0.1_4dd8fd8075cbbc8a5c1a124fbc373e500fd772f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
         jumboMode="true"
         optimize="true"
@@ -30,21 +39,21 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\User.USER-PK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_29af8efaf0b91f2a43a64ae4a523b05d6a44387f.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.0_baa16c419063f71ba3f9454ccd1298bdefa25254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="fa37fd35570e54040b26dfb041f4944799d14a99">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-fastadapter-1.1.0_dad5b530eed303528732030c6b69d24ff792b666.jar" />
     </item>
     <item
         is-multidex="false"
@@ -57,12 +66,48 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="74ee96cce6f2dfbd073cb2d716d97923c37a571a">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialdrawer-5.0.3_df8ea67431a528c8bbd707ac522be55a99319071.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.5.8\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="93e12ffa27e468e78d703173853ae71688028628">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-iconics-core-2.5.8_cbb4479db170f2eb39106fb3f24b902154b432dd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_2dbe5569a55efafaef6b9dd1bd15306bb501bc1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.5.1\eecbb0b998e77629862a13d957d552b3be58fc4e\httpclient-android-4.3.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="eecbb0b998e77629862a13d957d552b3be58fc4e">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.5.1_e9c89a2490cf47c7e0930762a78be3a6a7a36e5d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\google-material-typeface\2.2.0.1.original\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="53e176889382956e3910232309ab7056730553e8">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-google-material-typeface-2.2.0.1.original_acd6b45559e2e45f37deb8c139baabdb02f2d4a6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,11 +120,29 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.1.0_cbb09a71d150bcffd46f22b3897d9ae24cff7ea8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0_11254771220c526cf8690c8463efb6cecc4fe472.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="f286e86deae6c09145ca9a619cca9f2eb4fbec11">
+        sha1="2804d2877010c0e1edfb8cee260f9f6f0e150a53">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run_284cddc056916945229aa5a335897c6aab18c65c.jar" />
     </item>
     <item
@@ -99,78 +162,6 @@
         revision="23.0.2"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_d93501da74458432eef3457bdfd0b83f1075e62e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\material-design-iconic-typeface\2.2.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="27bd073c1d188457050a9169e7dfe03ea0271dbc">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-material-design-iconic-typeface-2.2.0.1_ca986fbe9f82ef19a3554b73aff30a37f218d1f4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="7f2420506110902f033406b25697cf97ee8c38b2">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.1.0_6c0cc0fb98bdbee4dfba69441b326d6833aa1779.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialize\0.8.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="0654a62e5c678e80a952149286b16e754de5a74e">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialize-0.8.2_ac1169a50e6db4e9731457db1f48f8a974431bd5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fontawesome-typeface\4.5.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="9ec06b192478fcc1acd79f399926c48444c02f86">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-fontawesome-typeface-4.5.0.1_4dd8fd8075cbbc8a5c1a124fbc373e500fd772f7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\1.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="fa37fd35570e54040b26dfb041f4944799d14a99">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-fastadapter-1.1.0_dad5b530eed303528732030c6b69d24ff792b666.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.0.3\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="74ee96cce6f2dfbd073cb2d716d97923c37a571a">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialdrawer-5.0.3_df8ea67431a528c8bbd707ac522be55a99319071.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_2dbe5569a55efafaef6b9dd1bd15306bb501bc1c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\google-material-typeface\2.2.0.1.original\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="53e176889382956e3910232309ab7056730553e8">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-google-material-typeface-2.2.0.1.original_acd6b45559e2e45f37deb8c139baabdb02f2d4a6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -214,8 +205,26 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="c1e53e0acd9b3af13f71799e201eeec1bfaac883">
+        sha1="1061c4376494190eef8751c185b4e3c95325a9c0">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b817cf27a2833a0b1e18bf9aacbe9fe1498822d8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\material-design-iconic-typeface\2.2.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="27bd073c1d188457050a9169e7dfe03ea0271dbc">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-material-design-iconic-typeface-2.2.0.1_ca986fbe9f82ef19a3554b73aff30a37f218d1f4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialize\0.8.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0654a62e5c678e80a952149286b16e754de5a74e">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialize-0.8.2_ac1169a50e6db4e9731457db1f48f8a974431bd5.jar" />
     </item>
     <item
         is-multidex="false"

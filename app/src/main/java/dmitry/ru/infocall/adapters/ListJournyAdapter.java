@@ -19,7 +19,7 @@ import android.widget.TextView;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import dmitry.ru.infocall.View.DialogInfo;
+import dmitry.ru.infocall.view.DialogInfo;
 import dmitry.ru.infocall.tasks.DownloadAvatarTask;
 import dmitry.ru.infocall.tasks.OnAvatarGetListner;
 import dmitry.ru.myapplication.R;

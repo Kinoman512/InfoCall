@@ -10,13 +10,14 @@ import android.util.Log;
 public class Setting {
     public static final String APP_PREFERENCES = "mysettings3";
 
-    public static final  String[] APP_LIST_SERVICE = {"sp", "html", "numbuster" };
+    public static final  String[] APP_LIST_SERVICE = {"sp", "htmlweb", "numbuster" };
 
 
 
     public static final String APP_ACTION_SAVE = "2";
     public static final String APP_ACTION_SHOW =  "1";
     public static final String APP_ACTION_PRIMARY = "0";
+    public static final String START_INFOCALL_TAG =  "START_INFOCALL_TAG";
 
 
     private static  SharedPreferences mSettings;
@@ -26,6 +27,21 @@ public class Setting {
         c = con;
         return mSettings = c.getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
     }
+
+
+    public static void setBool(String key, Boolean value) {
+
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putBoolean( key, value);
+        editor.apply();
+    }
+
+    public static boolean getBool(String key) {
+        return  mSettings.getBoolean( key,  false );
+    }
+
+
+
 
     public static void saveServiceState(long service, int key, Boolean value){
         if(mSettings == null)  {

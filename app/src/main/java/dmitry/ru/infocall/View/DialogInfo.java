@@ -1,4 +1,4 @@
-package dmitry.ru.infocall.View;
+package dmitry.ru.infocall.view;
 
 import android.Manifest;
 import android.app.Dialog;
