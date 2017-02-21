@@ -3,32 +3,20 @@ package dmitry.ru.infocall;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.PixelFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
-import dmitry.ru.infocall.DrawView;
-import dmitry.ru.infocall.service.CallReceiver;
 import dmitry.ru.myapplication.R;
 
 /**
@@ -74,20 +62,17 @@ public class CallLogAdapter extends BaseAdapter {
         WindowManager windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         img = (ImageView)  someView.findViewById(R.id.imageView);
 
-        ListView lv = (ListView)  someView.findViewById(R.id.callList);
+//        ListView lv = (ListView)  someView.findViewById(R.id.callList);
         //lv.setAdapter(new CallListAdapter(context, map));
 
-        Log.d("DrawView", "width  is" + lv.getWidth());
+//        Log.d("DrawView", "width  is" + lv.getWidth());
 
 
 
         DrawView myView = (DrawView)  someView.findViewById(R.id.MyView);
-        ImageView fl = (ImageView) someView.findViewById(R.id.myBack);
 
-        fl.setBackgroundColor(121);
         Bitmap bmp_back = BitmapFactory.decodeResource(context.getResources(),
                 R.drawable.back);
-        fl.setImageBitmap(bmp_back);
         TextView date = (TextView) someView.findViewById(R.id.textView2);
         DisplayMetrics metrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(metrics);
@@ -103,16 +88,10 @@ public class CallLogAdapter extends BaseAdapter {
         Log.d("MyDrawer3", "backWidth " + bmp_back2.getWidth() + " backHeight " + bmp_back2.getHeight());
         Log.d("MyDrawer3", "width Metrics " + metrics.widthPixels + " Height " + metrics.heightPixels);
 
-        fl.setImageBitmap(bmp_back2) ;
-        Log.d("MyDrawer3", "width View " + fl.getWidth() + " Height " + fl.getHeight());
 
+//        myView.setContent(lv, windowManager, list.get(pos), true);
 
-
-
-
-        myView.setContent(lv, windowManager, list.get(pos), true);
-
-        myView.setBack(fl);
+//        myView.setBack(fl);
         myView.setHeight(36 * list.get(pos).size());
 
 
@@ -174,7 +153,7 @@ public class CallLogAdapter extends BaseAdapter {
 
             img.setImageBitmap(bm2);
 
-            myView.setAvatar(img);
+//            myView.setAvatar(img);
         }
 
 

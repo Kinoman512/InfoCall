@@ -69,13 +69,13 @@ public class FileSave {
             ObjectInputStream oin = new ObjectInputStream(fis);
             mf = (MyFile) oin.readObject();
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         } catch (StreamCorruptedException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+         //   e.printStackTrace();
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+          //  e.printStackTrace();
         }
 
 

@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="6bace887500b82c787aee0be8a0cd493a6bba950">
+        sha1="3d2893ddfdd90f7adfad2aa346bb045bf197e779">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run_284cddc056916945229aa5a335897c6aab18c65c.jar" />
     </item>
     <item
@@ -205,7 +205,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="edfe1ec496eae9dbb81fcf847501858a81af37ed">
+        sha1="56ecf3828b8cb1047b52b925f77ef53a4a6710f5">
         <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b817cf27a2833a0b1e18bf9aacbe9fe1498822d8.jar" />
     </item>
     <item

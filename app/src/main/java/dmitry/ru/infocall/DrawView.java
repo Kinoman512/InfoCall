@@ -1,6 +1,5 @@
 package dmitry.ru.infocall;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -17,13 +16,11 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import dmitry.ru.infocall.utils.CallListAdapter;
 import dmitry.ru.infocall.utils.Setting;
 
 /**
@@ -36,8 +33,9 @@ public class DrawView extends View {
     int posAvatar = 0;
     boolean hasName;
 
-    String windowsX = "windowsX";
-    String windowsY = "windowsY";
+    public static String DRAW_VIEW_POX_X = "windowsX";
+    public static String DRAW_VIEW_POX_Y = "windowsY";
+
     String windowsScaleFactor = "windowsScaleFactor";
     int use = 0;
     private float mPosX;
@@ -83,25 +81,15 @@ public class DrawView extends View {
         mDrawPaint.setColor(Color.RED);
         mDrawPaint.setStyle(Paint.Style.STROKE);
         mDrawText = new Paint();
-        mPosX = Setting.getFuildFloat(windowsX);
-        mPosY = Setting.getFuildFloat(windowsY);
-        if(Math.abs(mPosX) > 300 || Math.abs(mPosY) > 300  ){
-            mPosX = 0;
-            mPosY = 0;
-        }
+
+        mPosX += getInitX();
+        mPosY += getInitY();
 
 
         if (Setting.getFuildFloat(windowsScaleFactor) > 0) {
             mScaleFactor = Setting.getFuildFloat(windowsScaleFactor);
 
         }
-
-        contentList.add(null);
-        contentList.add(null);
-        contentList.add(null);
-        contentList.add(null);
-
-        heightBox = (int) Setting.getLong("heightBox");
 
     }
 
@@ -124,6 +112,14 @@ public class DrawView extends View {
         v.layout(0, 0, v.getMeasuredWidth(), v.getMeasuredHeight());
         v.draw(c);
         return b;
+    }
+
+    public static float getInitX() {
+        return  Setting.getFuildFloat(DRAW_VIEW_POX_X);
+    }
+
+    public static float getInitY() {
+        return  Setting.getFuildFloat(DRAW_VIEW_POX_Y);
     }
 
     @Override
@@ -157,8 +153,8 @@ public class DrawView extends View {
 
                     mPosX += dx;
                     mPosY += dy;
-                    Setting.setFuild(windowsX, mPosX);
-                    Setting.setFuild(windowsY, mPosY);
+                    onMoveListner.onMove(mPosX, mPosY);
+
                     Setting.setFuild(windowsScaleFactor, mScaleFactor);
 
                     invalidate();
@@ -166,6 +162,7 @@ public class DrawView extends View {
 
                 mLastTouchX = x;
                 mLastTouchY = y;
+
 
                 break;
             }
@@ -199,167 +196,8 @@ public class DrawView extends View {
         return true;
     }
 
-    void onDrawBoxH(@NonNull Canvas canvas) {
-        int x = 0;
-        int y = 0;
-        int n = -1;
-        int u = 0;
-
-        //узкий контейнер
-        for (Bitmap e : contentList) {
-            Log.d("DrawView", "  count elements " + n + " " + contentList.size());
-            if (e == null) continue;
-            Log.d("DrawView", "  mScaleFactor " + mScaleFactor);
-            //y = 5;
-            n++;
 
 
-            switch (n) {
-                //фон
-                case 0:
-                    heightBox = (int) (e.getHeight() * mScaleFactor);
-                    widthBox = (int) (e.getWidth() * mScaleFactor);
-                    Log.d("DrawView", " heightBox  " + heightBox + " widthBox " + widthBox);
-                    Bitmap bmp = Bitmap.createScaledBitmap(e, e.getWidth(), heightBox, false);
-                    canvas.drawBitmap(bmp, y, x, mDrawText);
-                    //x +=  5;
-                    continue;
-                case 1:
-                    //аватар
-                    y = metrics.widthPixels / 2 - e.getWidth() / 2;
-                    Log.d("DrawView", "avatar widthPixels " + y);
-                    x += 10;
-                    canvas.drawBitmap(e, y, x, mDrawText);
-
-                    x += e.getHeight() + 5;
-                    continue;
-                case 2:
-                    //имя
-                    Log.d("DrawView7", " text2 align " + y + "  metrics.widthPixels  " +  metrics.widthPixels + " e.getWidth()" +  e.getWidth());
-                    //if ( (y + e.getWidth()) > metrics.widthPixels )
-                    //y = metrics.widthPixels/2  - 200;
-                    int n2 = mapInfo.get("name").length();
-                    y =  metrics.widthPixels / 2 - (25 * n2)/ 2 ;
-                    //else
-                   //     y = metrics.widthPixels / 1000;
-                    u++;
-                    x += 3;
-                    Log.d("DrawView7", " text align " + y + " u  " + u);
-                    canvas.drawBitmap(e, y, x, mDrawText);
-                    continue;
-                case 3:
-                    y = 410;
-                    x = 45;
-                    continue;
-                default:
-                    continue;
-            }
-        }
-    }
-
-    void onDrawBoxW(@NonNull Canvas canvas) {
-        int x = 0;
-        int y = 0;
-        int n = -1;
-        int u = 0;
-
-        //широкий контейнер
-        for (Bitmap e : contentList) {
-            if (e == null) continue;
-
-            Log.d("DrawView", "  MIN_HEIGHT_BOX " + MIN_HEIGHT_BOX);
-            n++;
-            switch (n) {
-                //фон
-                case 0:
-                    heightBox = (int) (e.getHeight() * mScaleFactor);
-                    widthBox = (int) (e.getWidth() * mScaleFactor);
-                    Log.d("DrawView", "  h " + heightBox + " w " + widthBox);
-                    Bitmap bmp = Bitmap.createScaledBitmap(e, e.getWidth(), heightBox, false);
-                    canvas.drawBitmap(bmp, y, x, mDrawText);
-                    x += 5;
-                    continue;
-                case 1:
-                    //аватар
-
-                    Log.d("DrawView", "avatar widthPixels " + y);
-                    x += 10;
-                    y += 10;
-                    y += metrics.widthPixels / 5;
-                    if(isStatic ) y = 20;
-                    canvas.drawBitmap(e, y, x, mDrawText);
-                    y += e.getWidth() + 10;
-                    Log.d("DrawView6", " text2 align " + y );
-                    continue;
-                case 2:
-                    //имя
-
-                    //y+= 300;
-                    int n2 = mapInfo.get("name").length();
-                    //y =  metrics.widthPixels / 2 - (17 * n2)/ 2 ;
-
-                    Log.d("DrawView6", " text align " + y + " u  " + u);
-                    canvas.drawBitmap(e, y, x, mDrawText);
-                    y = 0;
-                    continue;
-                case 3:
-                    y = 110;
-                    x = 45;
-                    continue;
-                default:
-                    continue;
-            }
-        }
-    }
-
-    void onDrawBoxB(@NonNull Canvas canvas) {
-        int x = 0;
-        int y = 0;
-        int n = -1;
-
-        // портер  и надпись
-        for (Bitmap e : contentList) {
-            if (e == null) continue;
-            n++;
-
-            switch (n) {
-                //фон
-                case 0:
-                    heightBox = (int) (e.getHeight() * mScaleFactor);
-                    widthBox = (int) (e.getWidth() * mScaleFactor);
-                    Log.d("DrawView", " back h " + heightBox + " w " + widthBox);
-                    Bitmap bmp = Bitmap.createScaledBitmap(e, e.getWidth(), heightBox, false);
-                    canvas.drawBitmap(bmp, y, x, mDrawText);
-                    x += 5;
-                    continue;
-                case 1:
-                    //аватар
-
-                    Log.d("DrawView", "avatar widthPixels " + y);
-                    x += 10;
-                    Bitmap bmp2 = Bitmap.createScaledBitmap(e, e.getWidth() * 2, e.getHeight() * 2, false);
-                    y = metrics.widthPixels / 2 - bmp2.getWidth() / 2 + 30;
-                    canvas.drawBitmap(bmp2, y, x, mDrawText);
-
-                    x += bmp2.getHeight() + 5;
-                    continue;
-                case 2:
-                    //имя
-
-                    x += 3;
-                    int n2 = mapInfo.get("name").length();
-                    y =  metrics.widthPixels / 2 - (25 * n2)/ 2 ;
-                    canvas.drawBitmap(e, y, x, mDrawText);
-                    continue;
-                case 3:
-                    y = 110;
-                    x = 45;
-                    continue;
-                default:
-                    continue;
-            }
-        }
-    }
 
     int getHeightListView(ListView lv){
         ListAdapter mAdapter = lv.getAdapter();
@@ -374,73 +212,32 @@ public class DrawView extends View {
         return  listviewElementsheight;
     }
 
+
+    View view;
+
+    IListner onMoveListner;
+
+
+
+    interface IListner{
+        public void onMove(float x, float y);
+    }
+
+    public void setOnMoveListner(IListner listner){
+        onMoveListner = listner;
+    }
+    void setMyView(View v){
+        this.view = v;
+    }
     @Override
     public void onDraw(@NonNull Canvas canvas) {
         super.onDraw(canvas);
         canvas.save();
         canvas.translate(0, mPosY);
 
-        contentInfo.setAdapter(new CallListAdapter(getContext(), mapInfo, 1));
-        MIN_HEIGHT_BOX =  getHeightListView(contentInfo) + 30;
 
-
-        contentInfo.setAdapter(new CallListAdapter(getContext(), mapInfo, 0));
-        MIN_HEIGHT_VERTICAL_BOX =  getHeightListView(contentInfo)+ contentList.get(1).getHeight() + 40;
-
-
-        contentInfo.setAdapter(new CallListAdapter(getContext(), mapInfo, 2));
-        MAX_HEIGHT_BOX_W =  getHeightListView(contentInfo)+ contentList.get(1).getHeight() * 2 + 30;
-//      //  contentInfo.removeAllViews();
-
-
-
-        int backWidth = metrics.widthPixels;
-        int mode = 0;
-
-        if(isStatic){
-            mode = 4;
-            heightBox = height;
-        }else{
-            Setting.setLong("heightBox",heightBox);
-        }
-
-        Log.d("DrawView2", "heightBox " + heightBox);
-        Log.d("DrawView2", "backWidth " + backWidth);
-        Log.d("DrawView2", "mScaleFactor " + mScaleFactor);
-        //портрет и надпись
-
-
-        if(heightBox >= MAX_HEIGHT_BOX_W && !isStatic){
-            Log.d("DrawView", "портрет и надпись  ");
-
-            contentInfo.setAdapter(new CallListAdapter(getContext(), mapInfo, 2));
-            Bitmap bm = DrawView.getBitmapFromView(contentInfo);
-            contentList.set(2, bm);
-            onDrawBoxB(canvas);
-        }else{
-            //шировая часть
-            //если  высота  сокращается, рисуется как узкая часть
-            if (!(backWidth <= MAX_WIDTH_VERTICAL_BOX) && heightBox <= MIN_HEIGHT_VERTICAL_BOX || isStatic) {
-
-                contentInfo.setAdapter(new CallListAdapter(getContext(), mapInfo, mode));
-                int y2 = contentInfo.getHeight();
-
-                Bitmap bm = DrawView.getBitmapFromView(contentInfo);
-                contentList.set(2, bm);
-                onDrawBoxW(canvas);
-                Log.d("DrawView", " широкая часть ");
-            } else {
-                //узкая часть
-
-
-                contentInfo.setAdapter(new CallListAdapter(getContext(), mapInfo, 1));
-                Bitmap bm = DrawView.getBitmapFromView(contentInfo);
-                contentList.set(2, bm);
-
-                Log.d("DrawView", "узкая часть ");
-                onDrawBoxH(canvas);
-            }
-        }
+       // Bitmap bmp = getBitmapFromView(view);
+        //canvas.drawBitmap(bmp, 0, 0, mDrawText);
 
 
 
@@ -448,15 +245,9 @@ public class DrawView extends View {
         canvas.restore();
     }
 
-    public void setContent(ListView v, WindowManager wm, LinkedHashMap<String, String> map, boolean moved) {
+    public void setData( LinkedHashMap<String, String> map, boolean moved) {
         use++;
-        windowManager = wm;
 
-        metrics = new DisplayMetrics();
-        windowManager.getDefaultDisplay().getMetrics(metrics);
-        contentInfo = v;
-
-        mapInfo = map;
         isStatic = moved;
 
         if(isStatic ){
@@ -471,29 +262,9 @@ public class DrawView extends View {
 
 
 
-    public void setBack(View v) {
-        use++;
-        Bitmap bm = DrawView.getBitmapFromView(v);
 
 
-        Log.d("DrawView4", "backWidth " + bm.getWidth() + " backHeight " + bm.getHeight() + "use " + use);
 
-        contentList.set(0, bm);
-        invalidate();
-
-
-    }
-
-    public void setAvatar(View v) {
-
-        Bitmap bm = DrawView.getBitmapFromView(v);
-
-        contentList.set(1, bm);
-        invalidate();
-        hasAvatar = true;
-
-
-    }
 
     public void setHeight(int height) {
         this.height = height;

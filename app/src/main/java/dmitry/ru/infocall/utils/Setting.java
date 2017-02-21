@@ -29,23 +29,23 @@ public class Setting {
 
     public static void saveServiceState(long service, int key, Boolean value){
         if(mSettings == null)  {
-            Log.w("mysettings", "You need instal your setting");
+//            Log.w("mysettings", "You need instal your setting");
             return;
         }
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putBoolean(service + "" + key, value);
         editor.apply();
-        Log.d("mysettings", "add setting  for " + service + " " + key + " v =  " + value);
+//        Log.d("mysettings", "add setting  for " + service + " " + key + " v =  " + value);
 
     }
 
     public static boolean getServiceState(long service, int key) throws Exception {
         if(mSettings == null)  {
-            Log.w("mysettings", "You need instal your setting");
+//            Log.w("mysettings", "You need instal your setting");
             throw  new Exception("You need instal your setting");
         }
 
-        Log.d("mysettings", "get setting  for "  + service + " " + key );
+//        Log.d("mysettings", "get setting  for "  + service + " " + key );
         return  mSettings.getBoolean(service +"" + key,  true );
     }
 
@@ -53,7 +53,7 @@ public class Setting {
 
     public static long getLong( String key){
         if(mSettings == null)  {
-            Log.w("mysettings", "You need instal your setting");
+//            Log.w("mysettings", "You need instal your setting");
             return 0;
         }
 
@@ -62,7 +62,7 @@ public class Setting {
 
     public static void setLong(String key, long value){
         if(mSettings == null)  {
-            Log.w("mysettings", "You need instal your setting");
+//            Log.w("mysettings", "You need instal your setting");
             return  ;
         }
         SharedPreferences.Editor editor = mSettings.edit();
@@ -72,11 +72,11 @@ public class Setting {
 
     public static float getFuildFloat( String key){
         if(mSettings == null)  {
-            Log.e("mysettings", "You need instal your setting");
+//            Log.e("mysettings", "You need instal your setting");
             return 0;
         }
 
-        Log.d("mysettings", "get setting  for "    + key );
+//        Log.d("mysettings", "get setting  for "    + key );
         return  mSettings.getFloat(key, 0);
     }
 
@@ -88,7 +88,7 @@ public class Setting {
         SharedPreferences.Editor editor = mSettings.edit();
         editor.putFloat(key, value);
         editor.apply();
-        Log.d("mysettings", "add setting  for " + key + " v =  " + value);
+//        Log.d("mysettings", "add setting  for " + key + " v =  " + value);
     }
 
 

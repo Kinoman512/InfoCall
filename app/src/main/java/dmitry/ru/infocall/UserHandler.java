@@ -384,7 +384,7 @@ public class UserHandler {
                     CacheImage.addBitmapToMemoryCache(phone,obj);
 
                     Log.d("UserHandler", "Try to replace avatar  ");
-                    MyDrawer.replaceAvatar(UserHandler.this.context, obj);
+                    MyDrawer.setAvatar(obj);
                 }
             }
         }
