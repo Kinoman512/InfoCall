@@ -1,5 +1,6 @@
 package dmitry.ru.infocall.utils.net.helper;
 
+import android.content.Context;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
@@ -16,7 +17,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,10 +49,10 @@ public class NetJson {
     };
 
     static String cacheId = "NetJson";
-    static Cache<String, Serializer> cache = new Cache<>(NetJson.cacheId);
+    static Cache<String, Serializer> cache;
 
     public static void requestJSONAsync(final String url,
-                                        final ArrayList<NameValuePair> params, final String authtoken, final Handler handler) {
+                                        final ArrayList<NameValuePair> params, final String authtoken, final Handler handler, final Context context) {
         pool.execute(new Runnable() {
 
             @Override
@@ -57,7 +60,12 @@ public class NetJson {
                 JSONObject json = null;
                 try {
 
+                    try {
+                        cache = new Cache<>(NetJson.cacheId, context);
 
+                    }catch (Exception e){
+
+                    }
                     String cacheKey = url + params.toString();
                     Serializer ser = cache.get(cacheKey);
 
@@ -105,10 +113,19 @@ public class NetJson {
                         Message.obtain(handler,  UserHandler.ERR, json).sendToTarget();
                     }
 
-                } catch (Exception e) {
+                }
+                catch (SocketTimeoutException e){
+                    Log.w("ErrorJson", "requestJSONAsync(): " + e.toString());
+                    Message.obtain(handler,  UserHandler.TIME_OUT, json).sendToTarget();
+                }
+                catch (UnknownHostException e){
+                    Log.w("ErrorJson", " NetJson: " + e.toString());
+                    Message.obtain(handler,  UserHandler.TIME_OUT, json).sendToTarget();
+                }
+                catch (Exception e) {
                     Log.e("ErrorJson" , e.toString());
                     Log.w("NetworkUtil", "requestJSONAsync(): " + e.toString());
-                    Message.obtain(handler,  UserHandler.NOT_FOUND, json).sendToTarget();
+                    Message.obtain(handler,  UserHandler.ERR, json).sendToTarget();
                 }
             }
         });

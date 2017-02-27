@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="ColorPrimary">#FF5722</color>
-    <color name="ColorPrimaryDark">#E64A19</color>
+    <color name="ColorPrimary" >#ff9800</color>
+    <color name="ColorPrimaryDark">#f57c00</color>
+    <color name="Background">#fff3e0</color>
+    <color name="BackgroundDialog">#ffffff</color>
 
     <color name="colorAccent">#FF4081</color>
     <color name="teal">#6dcded</color>
     <color name="darkTeal">#2bb3de</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="light_black">#222222</color>
     <color name="transparent_black">#80000000</color>
@@ -15,7 +17,7 @@
     <color name="lightPurple">#D9BCEB</color>
     <color name="ultraLightPurple">#f7f1fb</color>
     <color name="darkPurple">#39275B</color>
-    <color name="ultraUltraLightGray">#EBEBEB</color>
+    <color name="ultraUltraLightGray">#ebebeb</color>
     <color name="ultraLightGray_Lowlight">#c1c1c1</color>
     <color name="ultraLightGray_UltraLowlight">#dadada</color>
     <color name="ultraLightGray">#B3B3B3</color>
@@ -32,4 +34,21 @@
     <color name="darkBlue">#00698b</color>
     <color name="green">#64911c</color>
     <color name="transparent">#00000000 </color>
+    <color name="ColorPrimaryText">#ffffff</color>
+
+
+    <color name="Orange50">#fff3e0</color>
+    <color name="Orange100">#ffe0b2</color>
+    <color name="Orange200">#ffcc80</color>
+    <color name="Orange300">#ffb74d</color>
+    <color name="Orange400">#ffa726</color>
+    <color name="Orange500">#ff9800</color>
+    <color name="Orange600">#f57c00</color>
+    <color name="Orange700">#f57c00</color>
+    <color name="Orange800">#ef6c00</color>
+
+    <color name="OrangeA100">#ffd180</color>
+    <color name="OrangeA200">#ffab40</color>
+    <color name="OrangeA400">#ff9100</color>
+    <color name="OrangeA700">#ff6d00</color>
 </resources>

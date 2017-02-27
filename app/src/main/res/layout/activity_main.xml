@@ -15,7 +15,8 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         android:weightSum="1"
-        android:id="@+id/MainBox">
+        android:id="@+id/MainBox"
+        android:background="@color/Background">
 
 
     </LinearLayout>

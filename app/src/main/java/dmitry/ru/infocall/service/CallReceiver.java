@@ -1,14 +1,12 @@
 package dmitry.ru.infocall.service;
 
-import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.Intent;
-import android.telephony.TelephonyManager;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.ViewGroup;
-import android.view.WindowManager;
 
+import java.util.Date;
+import java.util.LinkedHashMap;
+
+import dmitry.ru.infocall.MyDrawer;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.utils.ContactService;
 
@@ -17,64 +15,73 @@ import dmitry.ru.infocall.utils.ContactService;
  */
 
 
-public class CallReceiver extends BroadcastReceiver {
+public class CallReceiver extends PhonecallReceiver {
 
-    public static Context context;
-    private static boolean incomingCall = false;
-    private static WindowManager windowManager;
-    private static ViewGroup windowLayout;
-    String phoneNumber = "";
-    WindowManager wm;
+    @Override
+    protected void onIncomingCallReceived(Context ctx, String number, Date start)
+    {
 
-    public CallReceiver(){
-        Log.d("CallService", "construct  call receiver");
-    }
-
-    public void onReceive(Context context, Intent intent) {
-
-        Log.d("CallService", "start call receiver");
-        if (intent.getAction().equals("android.intent.action.NEW_OUTGOING_CALL")) {
-            //получаем исходящий номер
-            phoneNumber = intent.getExtras().getString("android.intent.extra.PHONE_NUMBER");
-
-
-        } else if (intent.getAction().equals("android.intent.action.PHONE_STATE")){
-
-
-            String phone_state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
-            //Log.d("CallService2", "123" + phone_state);
-
-            if (phone_state.equals(TelephonyManager.EXTRA_STATE_RINGING)) {
-                //телефон звонит, получаем входящий номер
-                phoneNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER);
-                Log.d("CallService", "Show window: " + phoneNumber);
-                incomingCall = true;
 //                showWindow(context, phoneNumber);
-                UserHandler uh = new UserHandler(phoneNumber,context , true);
-                ContactService.startServicesToGetInfo(uh);
+//                UserHandler uh = new UserHandler(phoneNumber,context , true);
 
-            } else if (phone_state.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)){
-                //телефон находится в режиме звонка (набор номера / разговор)
-                if (incomingCall) {
-                    Log.d("CallService", "Close window.");
-                    incomingCall = false;
-                    ContactService.stopWindow();
-                }
-            } else if (phone_state.equals(TelephonyManager.EXTRA_STATE_IDLE)){
-                //телефон находиться в ждущем режиме. Это событие наступает по окончанию разговора, когда мы уже знаем номер и факт звонка
-                if (incomingCall) {
-                    Log.d("CallService", "Close window.");
-                    incomingCall = false;
-                    ContactService.stopWindow();
+//                UserHandler uh = new UserHandler("79044404193",context,false );
 
+
+//        Toast.makeText(ctx, number + "",Toast.LENGTH_LONG).show();
+//        number = "79044404193";
+
+        //Toast.makeText(context, number , Toast.LENGTH_LONG).show();
+
+        UserHandler uh = new UserHandler( number ,context,false );
+        uh.isLockedScreen = true;
+        uh.setGetDatalistner(new UserHandler.OnGetDataListner() {
+            @Override
+            public void OnGetData(LinkedHashMap<String, String> map) {
+                if(map.size() <= 2){
+                    String number = map.get("number");
                 }
-            }else{
-                ContactService.stopWindow();
+
             }
-        }else{
-            ContactService.stopWindow();
-        }
+        });
+        ContactService.startServicesToGetInfo(uh, true, true, false);
+        Log.d("1234",number);
     }
+
+    @Override
+    protected void onIncomingCallAnswered(Context ctx, String number, Date start)
+    {
+        //
+    }
+
+    @Override
+    protected void onIncomingCallEnded(Context ctx, String number, Date start, Date end)
+    {
+        //
+        MyDrawer.closeWindow();
+
+    }
+
+    @Override
+    protected void onOutgoingCallStarted(Context ctx, String number, Date start)
+    {
+        //
+
+    }
+
+    @Override
+    protected void onOutgoingCallEnded(Context ctx, String number, Date start, Date end)
+    {
+        //
+    }
+
+    @Override
+    protected void onMissedCall(Context ctx, String number, Date start)
+    {
+        MyDrawer.closeWindow();
+    }
+
+
+
 
 
 

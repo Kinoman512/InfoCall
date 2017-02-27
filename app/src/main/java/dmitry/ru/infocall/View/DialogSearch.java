@@ -58,7 +58,7 @@ public class DialogSearch   extends Dialog implements
                 String number = String.valueOf(et_number.getText());
 
                 if(number != null && !number.isEmpty()){
-                    Toast.makeText(context, number + "",Toast.LENGTH_LONG).show();
+                    Toast.makeText(context, "идет поиск",Toast.LENGTH_SHORT).show();
 
                     UserHandler uh = new UserHandler(number, context, false);
                     uh.setGetDatalistner(new UserHandler.OnGetDataListner() {
@@ -69,7 +69,7 @@ public class DialogSearch   extends Dialog implements
                             di.show();
                         }
                     });
-                    ContactService.startServicesToGetInfo(uh, false, false);
+                    ContactService.startServicesToGetInfo(uh, false, false, false);
 
                 }else{
                     Toast.makeText(context,"Поле не должно быть пустым",Toast.LENGTH_LONG).show();

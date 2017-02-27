@@ -114,7 +114,7 @@ public class MenuFragment extends Fragment {
 
 
                 UserHandler uh = new UserHandler("79081906207", MenuFragment.this.inflater.getContext(),false );
-                ContactService.startServicesToGetInfo(uh, false, true);
+                ContactService.startServicesToGetInfo(uh, false, true, true);
 //                List<LinkedHashMap<String, String>> list = ContactUtil.getCallLog( MenuFragment.this.inflater.getContext());
 
 
@@ -143,7 +143,7 @@ public class MenuFragment extends Fragment {
 //
 //                Log.d("CallService2", "tt" + list2.toString());
 //
-//                MainActivity.setFragment(new CallLogFragment(list2));
+//                MainActivity.setFragment(new JourneyFragment(list2));
                 MainActivity.isShown  = true;
 
 
@@ -183,7 +183,7 @@ public class MenuFragment extends Fragment {
 
                 list2.add(map);
 
-                MainActivity.setFragment(new CallLogFragment(list2), true);
+                MainActivity.setFragment(new JourneyFragment(), true);
             }
         });
 

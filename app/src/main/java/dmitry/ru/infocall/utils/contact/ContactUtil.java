@@ -12,7 +12,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.ContactsContract;
-import android.renderscript.Element;
 import android.util.Log;
 
 import java.io.ByteArrayOutputStream;
@@ -286,7 +285,7 @@ public class ContactUtil {
         }
 
         Bitmap photo = BitmapFactory.decodeResource(context.getResources(),
-                R.drawable.default_callscreen);
+                R.drawable.oval);
 
         try {
             InputStream inputStream = ContactsContract.Contacts.openContactPhotoInputStream(context.getContentResolver(),

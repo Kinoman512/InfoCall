@@ -9,12 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import dmitry.ru.infocall.MyDrawer;
+import dmitry.ru.infocall.SettingServers;
 import dmitry.ru.infocall.TaskBean;
 import dmitry.ru.infocall.UserHandler;
-import dmitry.ru.infocall.utils.contact.ContactUtil;
 import dmitry.ru.infocall.tasks.HtmlwebTask;
 import dmitry.ru.infocall.tasks.NumbusterTask;
 import dmitry.ru.infocall.tasks.Sp2All;
+import dmitry.ru.infocall.utils.contact.ContactUtil;
+import dmitry.ru.myapplication.BuildConfig;
 
 /**
  * Created by Dmitry on 21.02.2016.
@@ -24,16 +26,23 @@ import dmitry.ru.infocall.tasks.Sp2All;
 
 public class ContactService {
 
-    public static List<TaskBean> listtask = new ArrayList<>();
+    public static List<TaskBean> listtask;
 
     public static boolean startServicesToGetInfo(UserHandler uh) {
-        return  startServicesToGetInfo(uh,false, true);
+        return  startServicesToGetInfo(uh,false, true, false);
     }
 
-    public static boolean startServicesToGetInfo(UserHandler uh, boolean needSaveInJourney, boolean needShowWindow) {
+    public static boolean startServicesToGetInfo(UserHandler uh, boolean needSaveInJourney, boolean needShowWindow, boolean needBtns) {
+
+        listtask = new ArrayList<>();
         uh.phone = uh.phone.replaceAll("\\+|\\-", "");
+
+        if (BuildConfig.DEBUG) {
+            //uh.phone = "79044404193";
+        }
         uh.needSaveInJourney = needSaveInJourney;
         uh.needShowWindow = needShowWindow;
+        uh.needBtns = needBtns;
 
         Context con = uh.context;
         String phone = uh.phone;
@@ -42,6 +51,7 @@ public class ContactService {
 
         phone = "7" + phone.substring(1);
         Log.d("ContactService", phone);
+        uh.phone = phone;
         isEmptyNumber = ContactUtil.getContactInfo(con, phone).isEmpty();
         Log.d("ContactService", "isEmptyNumber = " + isEmptyNumber);
 
@@ -65,21 +75,20 @@ public class ContactService {
         }
 
 
-        phone = "7" + phone.substring(1);
 
 
-        Log.d("ContactService", "Setting.APP_LIST_SERVICE.length  " + Setting.APP_LIST_SERVICE.length);
-            for (int i = 0; i < Setting.APP_LIST_SERVICE.length; i++) {
+        Log.d("ContactService", "Setting.APP_LIST_SERVICE.length  " + SettingServers.APP_LIST_SERVICE.length);
+            for (int i = 0; i < SettingServers.APP_LIST_SERVICE.length; i++) {
                 TaskBean tb = new TaskBean();
 
-                String tag  = Setting.APP_LIST_SERVICE[i];
+                String tag  = SettingServers.APP_LIST_SERVICE[i];
 
                 tb.setTag(tag);
                 
                 Setting.init(uh.context);
                 boolean b0 = false;
                 try {
-                    b0 = Setting.getServiceState(i, 0);
+                    b0 = Setting.getBool(tag);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -92,18 +101,18 @@ public class ContactService {
                 tb.setIsWork(b0);
                 switch (i) {
                     case 0:
-                        tb.setTask(new Sp2All());
+                        tb.setTask(new Sp2All(con));
                         tb.setHandler(uh.new Sp2AllHandler());
                         listtask.add(tb);
                         break;
                     case 1:
-                        tb.setTask(new HtmlwebTask());
+                        tb.setTask(new HtmlwebTask(con));
                         tb.setHandler(uh. new HtmlWebHandler());
                         listtask.add(tb);
                         break;
                     case 2:
-                        tb.setTask(new NumbusterTask());
-                        tb.setHandler(uh. new CommmonJsonHandler(Setting.APP_LIST_SERVICE[2],NumbusterTask.listFuild, null));
+                        tb.setTask(new NumbusterTask(con));
+                        tb.setHandler(uh. new NumbusterJsonHandler(SettingServers.APP_LIST_SERVICE[2],NumbusterTask.listFuild, null));
                         listtask.add(tb);
                         break;
                 }

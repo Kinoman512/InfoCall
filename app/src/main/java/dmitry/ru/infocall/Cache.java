@@ -1,6 +1,7 @@
 package dmitry.ru.infocall;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,30 +14,31 @@ import java.io.Serializable;
 import java.io.StreamCorruptedException;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import dmitry.ru.infocall.utils.Setting;
+import dmitry.ru.infocall.utils.UtilFile;
 
 /**
  * Created by Dmitry on 20.06.2016.
  */
 public class Cache<T,K> implements Serializable  {
 
+    private final String MyCacheTag = "MyCacheTag";
+
     public class Data<M>   implements Serializable {
         public M data;
     }
-
+    Context context ;
 
     long date;
     long delta = 259200000;
     String file;
 
-    public Cache(String id){
+    public Cache(String id,Context context){
         file ="/cache4" + id ;
-
+        this.context = context;
        long d = Setting.getLong(file);
 
         if(d == 0){
@@ -45,9 +47,10 @@ public class Cache<T,K> implements Serializable  {
         }
         date = d;
 
-        String path = MainActivity.filedir + file;
+        String path = UtilFile.getPath(context);
+        Log.d(MyCacheTag, "path!!!" + path);
         File file = new File(path);
-        File f2 = new File(MainActivity.filedir);
+        File f2 = new File(UtilFile.getPath(context));
         if (!file.exists())
             try {
                 file.createNewFile();
@@ -113,7 +116,7 @@ public class Cache<T,K> implements Serializable  {
     boolean save ( Data<List<LinkedHashMap<T, K>>> data) {
 
 
-        String path = MainActivity.filedir + file;
+        String path =UtilFile.getPath(context) + file;
         FileOutputStream fos = null;
         try {
 
@@ -142,7 +145,7 @@ public class Cache<T,K> implements Serializable  {
     }
 
     Data<List<LinkedHashMap<T, K>>> read() {
-        String path = MainActivity.filedir + file;
+        String path = UtilFile.getPath(context) + file;
         Data<List<LinkedHashMap<T, K>>> data = new Data<>();
         FileInputStream fis = null;
         ObjectInputStream oin = null;

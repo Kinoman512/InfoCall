@@ -21,12 +21,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.infocall.tasks.DownloadAvatarTask;
-import dmitry.ru.infocall.utils.net.helper.NetHtml;
 import dmitry.ru.infocall.tasks.OnAvatarGetListner;
 import dmitry.ru.infocall.tasks.SaveContactTask;
 import dmitry.ru.infocall.tasks.Sp2All;
+import dmitry.ru.infocall.utils.net.helper.NetHtml;
 
 /**
  * Created by Dmitry on 13.02.2016.
@@ -40,12 +39,14 @@ public class UserHandler {
     public static final int NO_MORE = 3;
     public static final int CONFLICT = 4;
     public static final int NOT_FOUND = 5;
+    public static final int TIME_OUT = 6;
+
     public static List<TaskBean> listtask = new ArrayList<>();
 
-    public final LoginHandler loginhandler = new LoginHandler();
-    public final Sp2AllHandler sphandler = new Sp2AllHandler();
-    public final HtmlWebHandler htmlWebHandler = new HtmlWebHandler();
-    public final SweetAlertHandler sweethandler = new SweetAlertHandler();
+    public  LoginHandler loginhandler = new LoginHandler();
+    public  Sp2AllHandler sphandler = new Sp2AllHandler();
+    public  HtmlWebHandler htmlWebHandler = new HtmlWebHandler();
+    public  SweetAlertHandler sweethandler = new SweetAlertHandler();
 
     public final LinkedHashMap<String, String> data = new LinkedHashMap<>();
     public LinkedHashMap<String, String> forSave = new LinkedHashMap<>();
@@ -63,6 +64,7 @@ public class UserHandler {
     int x = 0;
     public boolean needSaveInJourney;
     public boolean needShowWindow;
+    public boolean needBtns;
 
     public interface OnGetDataListner{
         public void OnGetData(LinkedHashMap<String, String> map);
@@ -265,6 +267,8 @@ public class UserHandler {
 //
 
                 if (e.getIsWork()) {
+
+
                     Log.d("UserHandler", "the task for show");
 
                     // map.remove("vk");
@@ -299,7 +303,15 @@ public class UserHandler {
                     data.putAll(map);
                     Log.d("UserHandler", "show windows with  data");
 
+                    String name2 = map.get("name");
+                    String number = map.get("number");
+
                     if (listtask.size() == 1) {
+
+                        if(data.size() <= 2 && name2.isEmpty()){
+                            Toast.makeText(context,"Нет данных для " +number, Toast.LENGTH_LONG).show();
+                            return;
+                        }
                         LinkedHashMap<String, String> data2 = new LinkedHashMap<>();
                         data2.putAll(data);
 
@@ -332,7 +344,11 @@ public class UserHandler {
                     }
 
                     if(needShowWindow){
-                        MyDrawer.showWindow(context, data ,this.isLockedScreen);
+                        if(data.size() > 2 ||  !name2.isEmpty()){
+                            MyDrawer.showWindow(context, data ,this.isLockedScreen, needBtns);
+                        }else{
+                            Toast.makeText(context,"Нет данных для " +number, Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
 
@@ -361,19 +377,19 @@ public class UserHandler {
         }
     }
 
-    public class CommmonJsonHandler extends Handler {
+    public class NumbusterJsonHandler extends Handler {
         String tag;
         String[] listFields;
         String[] removeOnShow;
 
-        public CommmonJsonHandler(String t, String[] list, String[] removed) {
+        public NumbusterJsonHandler(String t, String[] list, String[] removed) {
             tag = t;
             listFields = list;
             removeOnShow = removed;
         }
 
         public void handleMessage(Message msg) {
-            Log.d("UserHandler", "CommmonJsonHandler");
+            Log.d("UserHandler", "NumbusterJsonHandler");
 
             LinkedHashMap<String, String> map = new LinkedHashMap<>();
             if (msg.what == OK) {
@@ -384,9 +400,18 @@ public class UserHandler {
                 map.putAll(UserHandler.jsonToMap(listFields, obj));
                 map.put("name", map.get("name") + " " + map.get("lastName"));
                 map.remove("lastName");
-                Log.d("UserHandler", "CommmonJsonHandler" + map);
+                Log.d("UserHandler", "NumbusterJsonHandler" + map);
+
+            } else if (msg.what == TIME_OUT){
+                Toast.makeText(context,"Время ожидания истекло, проверьте подключение к интернету", Toast.LENGTH_LONG).show();
             }
+//            else {
+////                String message = NetJson.getError(msg);
+//                Toast.makeText(context, "Ошибка при загрузке данных numbuster", Toast.LENGTH_SHORT).show();
+//            }
             extraOptions(tag, map);
+
+
         }
     }
 
@@ -410,9 +435,13 @@ public class UserHandler {
                     e.printStackTrace();
                 }
 
-            } else {
+            }
+            else if (msg.what == TIME_OUT){
+                Toast.makeText(context,"Время ожидания истекло, проверьте подключение к интернету", Toast.LENGTH_LONG).show();
+            }
+            else {
 //                String message = NetJson.getError(msg);
-//            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Ошибка при логировании Sp2All", Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -439,9 +468,22 @@ public class UserHandler {
                 map.put("company", "Sp2All");
                 Log.d("Sp2AllData", "Data " + map);
 
-
+            }else if (msg.what == TIME_OUT){
+                Toast.makeText(context,"Время ожидания истекло, проверьте подключение к интернету", Toast.LENGTH_LONG).show();
             }
-            extraOptions(Setting.APP_LIST_SERVICE[0], map);
+            else if (msg.what == ERR) {
+//                String message = NetJson.getError(msg);
+//                JSONObject obj = (JSONObject) msg.obj;
+//                String err = null;
+//                try {
+//                    err = obj.getString("error");
+//                    Toast.makeText(context, "Ошибка при загрузке данных" +err, Toast.LENGTH_SHORT).show();
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+            }
+            extraOptions(SettingServers.APP_LIST_SERVICE[0], map);
+
 
 
         }
@@ -475,15 +517,18 @@ public class UserHandler {
                     Log.d("UserHandler", "HtmlWeb " + e.text());
 
                 }
-                extraOptions(Setting.APP_LIST_SERVICE[1], map);
 //                map.put("city_name", doc.select("d");
 //                map.put("country_name", Sp2All.baseurl + map.get("avatar"));
 
 
-            } else {
-//                String message = NetJson.getError(msg);
-//            Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+            } else if (msg.what == TIME_OUT){
+                Toast.makeText(context,"Время ожидания истекло, проверьте подключение к интернету", Toast.LENGTH_LONG).show();
             }
+            else {
+//                String message = NetJson.getError(msg);
+                Toast.makeText(context, "Ошибка при загрузке данных HtmlWeb", Toast.LENGTH_SHORT).show();
+            }
+            extraOptions(SettingServers.APP_LIST_SERVICE[1], map);
 
         }
     }

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:text="Item"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#060000"
+        android:textColor="@color/black"
         android:textSize="28px" />
 
 </LinearLayout>

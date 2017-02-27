@@ -1,13 +1,20 @@
 package dmitry.ru.infocall;
 
+import android.Manifest;
+import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -19,14 +26,11 @@ import android.widget.Toast;
 import com.mikepenz.iconics.context.IconicsContextWrapper;
 import com.mikepenz.iconics.context.IconicsLayoutInflater;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import dmitry.ru.infocall.view.DialogSearch;
-import dmitry.ru.infocall.fragment.MenuFragment;
-import dmitry.ru.infocall.view.DrawPanel;
+import dmitry.ru.infocall.fragment.JourneyFragment;
 import dmitry.ru.infocall.utils.Setting;
+import dmitry.ru.infocall.view.DialogSearch;
+import dmitry.ru.infocall.view.DrawPanel;
 import dmitry.ru.myapplication.R;
 
 
@@ -35,24 +39,71 @@ public class MainActivity extends AppCompatActivity {
 
     public static Boolean  isShown = false;
     static FragmentManager fragmentManager;
-    static String filedir;
     long start;
+
+    String[] PERMISSIONS = {
+            Manifest.permission.READ_PHONE_STATE,
+            Manifest.permission.READ_CALL_LOG,
+            Manifest.permission.WRITE_CALL_LOG,
+            Manifest.permission.READ_CONTACTS,
+            Manifest.permission.WRITE_CONTACTS,
+
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.CALL_PHONE,
+
+            Manifest.permission.SYSTEM_ALERT_WINDOW,
+            Manifest.permission.INTERNET,
+            Manifest.permission.ACCESS_NETWORK_STATE,
+            Manifest.permission.PROCESS_OUTGOING_CALLS
+            };
+
 
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(IconicsContextWrapper.wrap(newBase));
     }
 
+
+    public final static int REQUEST_CODE = 2006;
+
+
+
+    @TargetApi(Build.VERSION_CODES.M)
+    public void checkDrawOverlayPermission() {
+        /** check if we already  have permission to draw over other apps */
+        if (!Settings.canDrawOverlays(this)) {
+            /** if not construct intent to request permission */
+            Intent intent = new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:" + getPackageName()));
+            /** request permission via start activity for result */
+            startActivityForResult(intent, REQUEST_CODE);
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode,  Intent data) {
+        /** check if received result code
+         is equal our requested code for draw permission  */
+        if (requestCode == REQUEST_CODE) {
+            // ** if so check once again if we have permission */
+            if (Settings.canDrawOverlays(this)) {
+                // continue here - permission was granted
+
+                Toast.makeText(this,"permission was granted",Toast.LENGTH_LONG).show();
+            }
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
 
-        filedir =  getFilesDir().getPath().toString();
+
         fragmentManager = getFragmentManager();
 
-        List<LinkedHashMap<String, String>> list2 = FileSave.read(this);
-//        MainActivity.setFragment(new CallLogFragment(list2), false);
+//        MainActivity.setFragment(new JourneyFragment(list2), false);
 
-        setCurrentFragment(new MenuFragment(), false);
+        setCurrentFragment(new JourneyFragment(), false);
         Setting.init(this);
         setRequestedOrientation (ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -70,6 +121,27 @@ public class MainActivity extends AppCompatActivity {
         start = System.currentTimeMillis();
 
 
+        int PERMISSION_ALL = 1;
+
+        if(!hasPermissions(this, PERMISSIONS)){
+            ActivityCompat.requestPermissions(this, PERMISSIONS, PERMISSION_ALL);
+        }
+
+        if (android.os.Build.VERSION.SDK_INT >=  Build.VERSION_CODES.M){
+            checkDrawOverlayPermission();
+        }
+
+
+    }
+    public static boolean hasPermissions(Context context, String... permissions) {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     @Override
@@ -138,7 +210,15 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
-        MyDrawer.closeWindow();
+        if (keyCode != KeyEvent.KEYCODE_BACK) {
+            return false;
+        }
+
+
+        if( MyDrawer.isShowen()){
+            MyDrawer.closeWindow();
+            return  false;
+        }
 
         if (DrawPanel.getDrawer().isDrawerOpen()) {
             DrawPanel.getDrawer().closeDrawer();

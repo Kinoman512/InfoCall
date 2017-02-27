@@ -10,13 +10,13 @@ import android.util.Log;
 public class Setting {
     public static final String APP_PREFERENCES = "mysettings3";
 
-    public static final  String[] APP_LIST_SERVICE = {"sp", "htmlweb", "numbuster" };
 
 
 
     public static final String APP_ACTION_SAVE = "2";
     public static final String APP_ACTION_SHOW =  "1";
     public static final String APP_ACTION_PRIMARY = "0";
+
     public static final String START_INFOCALL_TAG =  "START_INFOCALL_TAG";
 
 
@@ -42,28 +42,6 @@ public class Setting {
 
 
 
-
-    public static void saveServiceState(long service, int key, Boolean value){
-        if(mSettings == null)  {
-//            Log.w("mysettings", "You need instal your setting");
-            return;
-        }
-        SharedPreferences.Editor editor = mSettings.edit();
-        editor.putBoolean(service + "" + key, value);
-        editor.apply();
-//        Log.d("mysettings", "add setting  for " + service + " " + key + " v =  " + value);
-
-    }
-
-    public static boolean getServiceState(long service, int key) throws Exception {
-        if(mSettings == null)  {
-//            Log.w("mysettings", "You need instal your setting");
-            throw  new Exception("You need instal your setting");
-        }
-
-//        Log.d("mysettings", "get setting  for "  + service + " " + key );
-        return  mSettings.getBoolean(service +"" + key,  true );
-    }
 
 
 
@@ -105,6 +83,16 @@ public class Setting {
         editor.putFloat(key, value);
         editor.apply();
 //        Log.d("mysettings", "add setting  for " + key + " v =  " + value);
+    }
+
+    public static String getString( String key){
+        return  mSettings.getString(key,"");
+    }
+
+    public static void setString(String key, String value){
+        SharedPreferences.Editor editor = mSettings.edit();
+        editor.putString(key, value);
+        editor.apply();
     }
 
 

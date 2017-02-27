@@ -64,7 +64,11 @@ public class DialogInfo   extends Dialog implements
         btn_call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String phoneNumber = "79081906207";
+                String phoneNumber=  data.get("number");
+                if(phoneNumber == null || phoneNumber.isEmpty()){
+                    Toast.makeText(context,"Нет номера!", Toast.LENGTH_LONG).show();
+                }
+
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
                 if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     return;
@@ -78,8 +82,13 @@ public class DialogInfo   extends Dialog implements
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                String outCipherText= "";//editTextSMSCipherText.getText().toString();
-                String phoneNumber=  "79081906207";
+                String outCipherText= " ";//editTextSMSCipherText.getText().toString();
+
+
+                String phoneNumber=  data.get("number");
+                if(phoneNumber == null || phoneNumber.isEmpty()){
+                    Toast.makeText(context,"Нет номера!", Toast.LENGTH_LONG).show();
+                }
 
                 String uri= "smsto:"+phoneNumber;
                 Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(uri));

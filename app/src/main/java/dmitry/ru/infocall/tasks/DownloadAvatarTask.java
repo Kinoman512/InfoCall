@@ -1,6 +1,5 @@
 package dmitry.ru.infocall.tasks;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
@@ -9,6 +8,8 @@ import android.util.Log;
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
+
+import dmitry.ru.infocall.RunMainThread;
 
 /**
  * Created by Dmitry on 07.03.2016.
@@ -51,13 +52,13 @@ public class DownloadAvatarTask extends AsyncTask<String, Void, Void> {
                         .get();
 
            // }
-
-            ((Activity) context).runOnUiThread(new Runnable() {
+            RunMainThread.runOnUiThread(context, new Runnable() {
                 @Override
                 public void run() {
                     listner.OnFinishDownload(bitmap);
                 }
             });
+
 
 //            Message.obtain(uh.avatarHandler, UserHandler.OK, bitmap).sendToTarget();
 

@@ -2,7 +2,6 @@ package dmitry.ru.infocall;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -48,6 +47,7 @@ public class MyDrawer {
     private static TextView txt_name;
     private static int mPosX;
     private static int mPosY;
+    private static String  MyDrawerTag = "MyDrawerTag";
 
 
     public static void rewrite(LinkedHashMap<String, String> map) {
@@ -57,15 +57,18 @@ public class MyDrawer {
 
         String name = data.get("name");
 
-        if(name != null){
+        if(name != null && !name.isEmpty()){
             txt_name.setText(name);
             txt_name.setVisibility(View.VISIBLE);
 
         }
     }
+    public static void showWindow(final Context context,  LinkedHashMap<String, String> map, boolean isLockedScreen){
+        showWindow(context,map,  isLockedScreen, false);
+    }
 
 
-    public static void showWindow(final Context context,  LinkedHashMap<String, String> map, boolean isLockedScreen) {
+    public static void showWindow(final Context context,  LinkedHashMap<String, String> map, boolean isLockedScreen, boolean needBtns) {
         if(map == null || map.isEmpty()){
             return;
         }
@@ -83,11 +86,12 @@ public class MyDrawer {
         int paramForScreen;
         if(isLockedScreen){
              paramForScreen = WindowManager.LayoutParams.TYPE_SYSTEM_OVERLAY;
+//             paramForScreen = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
         }else{
-             paramForScreen = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+             paramForScreen = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
         }
 
-        WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+        final WindowManager.LayoutParams params = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.WRAP_CONTENT,
                 paramForScreen,WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED|WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON|
@@ -160,6 +164,11 @@ public class MyDrawer {
             }
         });
 
+        if(!needBtns){
+            btn_cancel.setVisibility(View.GONE);
+            btn_save.setVisibility(View.GONE);
+        }
+
         btn_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,16 +203,12 @@ public class MyDrawer {
 //        myView.setBack(fl);
 
         
-        Bitmap img2 = BitmapFactory.decodeResource(context.getResources(),
-                R.drawable.default_callscreen);
-
-        setAvatar(img2);
 
 
         myView.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View v, int keyCode, KeyEvent event) {
-                Log.d("MyListner", " get listner!!!");
+
 
                 return false;
             }
@@ -214,19 +219,25 @@ public class MyDrawer {
 
 
         rewrite(map);
-        windowManager.addView(windowLayout, params);
+        Log.d(MyDrawerTag, "1!!!");
+        RunMainThread.runOnUiThread(context, new Runnable() {
+            @Override
+            public void run() {
+                Log.d(MyDrawerTag, " get listner!!!");
+                windowManager.addView(windowLayout, params);
+            }
+        });
     }
 
     public static void setAvatar( Bitmap bm) {
         //ImageView img = (ImageView)  windowLayout.findViewById(R.id.imageView);
         if(ishown){
 
-            int w = 240;
-            int h = 240;
+            int w = 180;
+            int h = 180;
 
             Bitmap bm2 = Bitmap.createScaledBitmap(bm, w,
                     h, false);
-            Log.d("DrawView", "show avatar !");
             img.setImageBitmap(bm2);
 
 //            myView.setAvatar(img);
@@ -240,7 +251,13 @@ public class MyDrawer {
 
 
 
-
+    public static boolean isShowen() {
+        if(windowLayout == null){
+            return false;
+        }else{
+            return  true;
+        }
+    }
 
     public static void closeWindow() {
         if (windowLayout !=null){

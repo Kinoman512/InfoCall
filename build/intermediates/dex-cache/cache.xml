@@ -2,247 +2,247 @@
 <items version="2" >
 
     <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fontawesome-typeface\4.5.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="9ec06b192478fcc1acd79f399926c48444c02f86">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-fontawesome-typeface-4.5.0.1_4dd8fd8075cbbc8a5c1a124fbc373e500fd772f7.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\gson-2.6.1_a7ec4ba9e6e0a18a53a641319fb418ef0d0a43ae.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.michaelpardo\activeandroid\3.1.0-SNAPSHOT\4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08\activeandroid-3.1.0-SNAPSHOT.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\activeandroid-3.1.0-SNAPSHOT_b01096fea0fff4505303bdbe43d7fd0f131aa520.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="814fc0c3ec69a944add398217d90077301501a74">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.makeramen-roundedimageview-2.2.1_f32ed651d4241769282f2f6d07fbca13e1c70af0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.2.0_baa16c419063f71ba3f9454ccd1298bdefa25254.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\1.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="fa37fd35570e54040b26dfb041f4944799d14a99">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-fastadapter-1.1.0_dad5b530eed303528732030c6b69d24ff792b666.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\glide-3.5.2_057bbc36c419b904896830caa7401f6ba89a012a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.0.3\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="74ee96cce6f2dfbd073cb2d716d97923c37a571a">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialdrawer-5.0.3_df8ea67431a528c8bbd707ac522be55a99319071.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.5.8\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="93e12ffa27e468e78d703173853ae71688028628">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-iconics-core-2.5.8_cbb4479db170f2eb39106fb3f24b902154b432dd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_2dbe5569a55efafaef6b9dd1bd15306bb501bc1c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.5.1\eecbb0b998e77629862a13d957d552b3be58fc4e\httpclient-android-4.3.5.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="eecbb0b998e77629862a13d957d552b3be58fc4e">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\httpclient-android-4.3.5.1_e9c89a2490cf47c7e0930762a78be3a6a7a36e5d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\google-material-typeface\2.2.0.1.original\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="53e176889382956e3910232309ab7056730553e8">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-google-material-typeface-2.2.0.1.original_acd6b45559e2e45f37deb8c139baabdb02f2d4a6.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.2.0_9866999c1c4d16a80edf1aaded7058e24536dd65.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.1.0_cbb09a71d150bcffd46f22b3897d9ae24cff7ea8.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\support-annotations-23.2.0_11254771220c526cf8690c8463efb6cecc4fe472.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="2804d2877010c0e1edfb8cee260f9f6f0e150a53">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run_284cddc056916945229aa5a335897c6aab18c65c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\cn.pedant.sweetalert\library\1.3\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\cn.pedant.sweetalert-library-1.3_e30659a2f81b02a399cea61a754598cc28c7495a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.1.1_d93501da74458432eef3457bdfd0b83f1075e62e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.pnikosis-materialish-progress-1.0_3c27902a3c786d3de03c19c30c79fa1053bdeee2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="6e239441500605809818997dd63b62a947195f8c">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\internal_impl-23.2.0_546334ea3645074ff8e3c2f8718294b9a5955fc3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.7.2\d7e275ba05aa380ca254f72d0c0ffebaedc3adcf\jsoup-1.7.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d7e275ba05aa380ca254f72d0c0ffebaedc3adcf">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\jsoup-1.7.2_aa876efa37cd5c65a414cf203ef83512efe45cb9.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="292a9fa091757208efa65e77eef63088247e51f3">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.2.0_859968e5a990c9c84d407e69018a6f163e87fb28.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.2"
-        sha1="1061c4376494190eef8751c185b4e3c95325a9c0">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b817cf27a2833a0b1e18bf9aacbe9fe1498822d8.jar" />
-    </item>
-    <item
-        is-multidex="false"
+        is-multidex="true"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\material-design-iconic-typeface\2.2.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="27bd073c1d188457050a9169e7dfe03ea0271dbc">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-material-design-iconic-typeface-2.2.0.1_ca986fbe9f82ef19a3554b73aff30a37f218d1f4.jar" />
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-material-design-iconic-typeface-2.2.0.1_ca986fbe9f82ef19a3554b73aff30a37f218d1f4\classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="8c108c22c99e794eff255bb34d2a461200c4cbb0">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.2.0_baa16c419063f71ba3f9454ccd1298bdefa25254\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.makeramen\roundedimageview\2.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="814fc0c3ec69a944add398217d90077301501a74">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.makeramen-roundedimageview-2.2.1_f32ed651d4241769282f2f6d07fbca13e1c70af0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.6.1_a7ec4ba9e6e0a18a53a641319fb418ef0d0a43ae\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.michaelpardo\activeandroid\3.1.0-SNAPSHOT\4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08\activeandroid-3.1.0-SNAPSHOT.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4ab7b0182975bc57c49efc5e0b3baa4a10e4ec08">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\activeandroid-3.1.0-SNAPSHOT_b01096fea0fff4505303bdbe43d7fd0f131aa520\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.5.8\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="93e12ffa27e468e78d703173853ae71688028628">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-iconics-core-2.5.8_cbb4479db170f2eb39106fb3f24b902154b432dd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.5.2\ecf534dba3a8446ce84cbb797d314763be212a68\glide-3.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ecf534dba3a8446ce84cbb797d314763be212a68">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.5.2_057bbc36c419b904896830caa7401f6ba89a012a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="e5f32fa48a3eb2de0c987025c11b6e3864b634d9">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.2.0_9866999c1c4d16a80edf1aaded7058e24536dd65\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="104e999e4564494da43b42cff68d7e2e5cca3f04">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_284cddc056916945229aa5a335897c6aab18c65c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_d93501da74458432eef3457bdfd0b83f1075e62e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\cn.pedant.sweetalert\library\1.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\cn.pedant.sweetalert-library-1.3_e30659a2f81b02a399cea61a754598cc28c7495a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.0.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="74ee96cce6f2dfbd073cb2d716d97923c37a571a">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-materialdrawer-5.0.3_df8ea67431a528c8bbd707ac522be55a99319071\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\materialize\0.8.2\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="0654a62e5c678e80a952149286b16e754de5a74e">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialize-0.8.2_ac1169a50e6db4e9731457db1f48f8a974431bd5.jar" />
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-materialize-0.8.2_ac1169a50e6db4e9731457db1f48f8a974431bd5\classes.dex" />
     </item>
     <item
-        is-multidex="false"
-        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\google-material-typeface\2.2.0.1.original\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.1.1_9f046f1ca8710ad7790e266952e8464a7ce37174.jar" />
+        sha1="53e176889382956e3910232309ab7056730553e8">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-google-material-typeface-2.2.0.1.original_acd6b45559e2e45f37deb8c139baabdb02f2d4a6\classes.dex" />
     </item>
     <item
-        is-multidex="false"
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\1.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="fa37fd35570e54040b26dfb041f4944799d14a99">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-fastadapter-1.1.0_dad5b530eed303528732030c6b69d24ff792b666\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.mikepenz\fontawesome-typeface\4.5.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="9ec06b192478fcc1acd79f399926c48444c02f86">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.mikepenz-fontawesome-typeface-4.5.0.1_4dd8fd8075cbbc8a5c1a124fbc373e500fd772f7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_2dbe5569a55efafaef6b9dd1bd15306bb501bc1c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\org.apache.httpcomponents\httpclient-android\4.3.5.1\eecbb0b998e77629862a13d957d552b3be58fc4e\httpclient-android-4.3.5.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="eecbb0b998e77629862a13d957d552b3be58fc4e">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\httpclient-android-4.3.5.1_e9c89a2490cf47c7e0930762a78be3a6a7a36e5d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d96886efea7cc74fbb3abd0e3b51d5638fc57be0">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.1.0_cbb09a71d150bcffd46f22b3897d9ae24cff7ea8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.2.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.2"
         sha1="6e3578f92f7462d1a935a1d36173e3bdd1234976">
-        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.2.0_eb929d0a2d45c1693684a9e2528cf9b2cd0baf67.jar" />
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.2.0_eb929d0a2d45c1693684a9e2528cf9b2cd0baf67\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.pnikosis\materialish-progress\1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.pnikosis-materialish-progress-1.0_3c27902a3c786d3de03c19c30c79fa1053bdeee2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.2.0\jars\libs\internal_impl-23.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="6e239441500605809818997dd63b62a947195f8c">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.2.0_546334ea3645074ff8e3c2f8718294b9a5955fc3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.2.0\support-annotations-23.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="c5bf571bb10462bd90e5419ade67793f71acbc87">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.2.0_11254771220c526cf8690c8463efb6cecc4fe472\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="9b79e5b2345201e937c48569be55d850378a7e3b">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b817cf27a2833a0b1e18bf9aacbe9fe1498822d8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_9f046f1ca8710ad7790e266952e8464a7ce37174\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\.gradle\caches\modules-2\files-2.1\org.jsoup\jsoup\1.7.2\d7e275ba05aa380ca254f72d0c0ffebaedc3adcf\jsoup-1.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d7e275ba05aa380ca254f72d0c0ffebaedc3adcf">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsoup-1.7.2_aa876efa37cd5c65a414cf203ef83512efe45cb9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.2.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.2"
+        sha1="292a9fa091757208efa65e77eef63088247e51f3">
+        <dex dex="C:\Users\User.USER-PK\Desktop\infocall\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.2.0_859968e5a990c9c84d407e69018a6f163e87fb28\classes.dex" />
     </item>
 
 </items>

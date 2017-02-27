@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CompoundButton;
-import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
@@ -17,8 +16,9 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import dmitry.ru.infocall.MainActivity;
 import dmitry.ru.infocall.UserHandler;
+import dmitry.ru.infocall.fragment.JourneyFragment;
 import dmitry.ru.infocall.fragment.ServicesFragment;
-import dmitry.ru.infocall.service.CallReceiver;
+import dmitry.ru.infocall.service.MyService;
 import dmitry.ru.infocall.utils.ContactService;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.myapplication.R;
@@ -27,6 +27,7 @@ public class DrawPanel {
 
     public final static String SERVICE_TAG = "service";
     public final static String SETTING_TAG = "setting_window";
+    public final static String SERVICE_JOURNY = "journyes";
 
 
     public static AppCompatActivity activity = null;
@@ -49,9 +50,9 @@ public class DrawPanel {
     private static DrawerBuilder add(DrawerBuilder drawer) {
 
 
-        boolean check = true;
+        boolean check = Setting.getBool( Setting.START_INFOCALL_TAG);
         drawer.addDrawerItems(
-                new SecondarySwitchDrawerItem().withName("Старт").withLevel(2).withTag(SERVICE_TAG).withIdentifier(0).withChecked(check).withOnCheckedChangeListener(new OnCheckedChangeListener() {
+                new SecondarySwitchDrawerItem().withName("Старт").withLevel(2).withIdentifier(0).withChecked(check).withOnCheckedChangeListener(new OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(IDrawerItem drawerItem, CompoundButton buttonView, boolean isChecked) {
                         if (drawerItem instanceof SecondarySwitchDrawerItem) {
@@ -60,15 +61,14 @@ public class DrawPanel {
 //                                result.updateItem(sd);
 
                             if(isChecked){
-                               activity.startService(
-                                        new Intent(activity, CallReceiver.class));
-                                Toast.makeText(activity, "Служба InfoCall запущена",
-                                        Toast.LENGTH_SHORT).show();
+
+                                Intent service = new Intent(activity, MyService.class);
+                                activity.startService(service);
+
                             }else {
-                                activity.startService(
-                                        new Intent(activity, CallReceiver.class));
-                                Toast.makeText(activity, "Служба InfoCall остановлена",
-                                        Toast.LENGTH_SHORT).show();
+
+                                Intent service = new Intent(activity, MyService.class);
+                                activity.stopService(service);
                             }
 
 
@@ -82,6 +82,17 @@ public class DrawPanel {
 
                     }
                 })
+        );
+
+
+        drawer.addDrawerItems(
+                new PrimaryDrawerItem().withTag(SERVICE_TAG).withName(R.string.services).withIdentifier(144).withLevel(2),
+                new DividerDrawerItem()
+        );
+
+        drawer.addDrawerItems(
+                new PrimaryDrawerItem().withTag(SERVICE_JOURNY).withName(R.string.journy).withIdentifier(144).withLevel(2),
+                new DividerDrawerItem()
         );
 
         drawer.addDrawerItems(
@@ -114,13 +125,17 @@ public class DrawPanel {
                             return false;
                         }
                         switch ((String) drawerItem.getTag()) {
+
+                            case  SERVICE_JOURNY:
+                                MainActivity.setFragment(new JourneyFragment(), true);
+                                return false;
                             case SERVICE_TAG:
                                 MainActivity.setFragment(new ServicesFragment(), true);
                                 return false;
                             case SETTING_TAG:
 
                                 UserHandler uh = new UserHandler("79081906207", activity,false );
-                                ContactService.startServicesToGetInfo(uh, false, true);
+                                ContactService.startServicesToGetInfo(uh, false, true, true);
                                 return false;
 
                         }

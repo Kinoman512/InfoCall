@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_blue_50">
+    android:background="@color/BackgroundDialog">
 
     <TextView
         android:text="Поиск человека по телефону"
@@ -42,8 +42,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_find"
             android:layout_weight="1"
-            android:textColor="#5DBCD2"
-            android:background="@android:color/white"
+            android:textColor="@color/white"
+            android:background="@android:color/holo_blue_light"
             android:layout_marginRight="20dp" />
 
         <Button
@@ -52,8 +52,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/btn_cancel"
             android:layout_weight="1"
-            android:textColor="#5DBCD2"
-            android:background="@android:color/white"
+            android:textColor="@color/white"
+            android:background="@android:color/holo_blue_light"
             android:layout_marginLeft="20dp" />
     </LinearLayout>
 

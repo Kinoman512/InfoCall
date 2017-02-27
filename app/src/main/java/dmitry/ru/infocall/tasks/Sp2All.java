@@ -1,5 +1,6 @@
 package dmitry.ru.infocall.tasks;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
@@ -22,17 +23,22 @@ public class Sp2All  extends AsyncTask<UserHandler, Void, String> {
     public static final String[] listFuild = new String[]{
             "first_name@@name", "vk:old_user_id@@vk", "country_name@@country", "city_name@@city", "avatar:100@@avatar", "org_title@@organization", "birthday@@birthday"
     };
+    private static  Context context = null;
+
+    public Sp2All(Context context){
+        this.context =  context;
+    }
 
     public static final long waitResponse = 3000;
 
-    private static void login(String username, String password, Handler handler) {
+    private  static void login(String username, String password, Handler handler) {
         String url = baseurl + "login";
         ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("login", username));
         params.add(new BasicNameValuePair("password", password));
         //					params.add(new BasicNameValuePair("authType", "mobile"));
         try {
-            NetJson.requestJSONAsync(url, params, null, handler);
+            NetJson.requestJSONAsync(url, params, null, handler,context);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,7 +49,7 @@ public class Sp2All  extends AsyncTask<UserHandler, Void, String> {
         params.add(new BasicNameValuePair("m", "getUserInfo"));
         params.add(new BasicNameValuePair("phone", phone));
 
-        NetJson.requestJSONAsync(baseurl, params, token, handler);
+        NetJson.requestJSONAsync(baseurl, params, token, handler,context);
     }
 
     public static void getInfo(UserHandler params) {

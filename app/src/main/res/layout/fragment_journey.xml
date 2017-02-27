@@ -16,9 +16,10 @@
     <TextView
         android:text="Нет записей"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:id="@+id/txt_no_records"
-        android:layout_margin="5dp" />
+        android:layout_margin="5dp"
+        android:gravity="center" />
 
     <ListView
         android:layout_width="fill_parent"
@@ -27,7 +28,8 @@
 
         android:background="@android:color/transparent"
         android:divider="@android:color/transparent"
-        android:listSelector="@android:color/transparent" />
+        android:listSelector="@android:color/transparent"
+        android:visibility="visible" />
 
     />
 </LinearLayout>

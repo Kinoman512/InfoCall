@@ -7,14 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
 
+import dmitry.ru.infocall.SettingServers;
 import dmitry.ru.infocall.utils.Setting;
+import dmitry.ru.infocall.view.DialogSetToken;
 import dmitry.ru.myapplication.R;
+
+import static dmitry.ru.infocall.SettingServers.getImageByTag;
+import static dmitry.ru.infocall.SettingServers.getNameByTag;
+import static dmitry.ru.infocall.SettingServers.isNeedAccesToken;
 
 /**
  * Created by User on 21.02.2017.
@@ -26,7 +34,7 @@ public class ListServicesAdapter  extends BaseAdapter {
     private List<String> list;
 
     public ListServicesAdapter(Context mContext) {
-        list = Arrays.asList( Setting.APP_LIST_SERVICE);
+        list = Arrays.asList( SettingServers.APP_LIST_SERVICE);
         this.mContext = mContext;
     }
 
@@ -47,29 +55,61 @@ public class ListServicesAdapter  extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View someView, ViewGroup parent) {
+    public View getView(final int position, View someView, ViewGroup parent) {
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         if (someView == null) {
 
             someView = inflater.inflate(R.layout.item_service, parent, false);
 
-            String tag = list.get(position);
+            final String tag = list.get(position);
 
             String name_service = "";
 
             TextView txt_service_name = (TextView) someView.findViewById(R.id.txt_service_name);
-            CheckBox checkbox_service = (CheckBox) someView.findViewById(R.id.checkbox_service);
+            final CheckBox checkbox_service = (CheckBox) someView.findViewById(R.id.checkbox_service);
             ImageView img_service = (ImageView) someView.findViewById(R.id.img_service);
 
-            name_service = getNameByTag(tag);
+
+            final boolean needAcces = isNeedAccesToken(tag);
+            boolean isChecked = Setting.getBool(tag);
+
+            checkbox_service.setChecked(isChecked);
+            checkbox_service.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                    if(isChecked && needAcces){
+
+                        String token = Setting.getString("token" + tag);
+                        if(token == null || token.isEmpty()){
+                            checkbox_service.setChecked(false);
+                            Toast.makeText(mContext,"Вы должны установить ключ для этого сервиса", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                    }
+                    Setting.setBool(tag,isChecked);
+                }
+            });
+            if(needAcces){
+                someView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DialogSetToken dst = new DialogSetToken(mContext,tag);
+                        dst.show();
+                    }
+                });
+            }
+
+
+            name_service = getNameByTag(mContext, tag);
             if(name_service != null){
                 txt_service_name.setText(name_service);
 
             }
 
 
-            Drawable drawable = getImageByTag(tag);
+            Drawable drawable = getImageByTag( mContext, tag);
 
             if(drawable != null) {
                 img_service.setImageDrawable(drawable);
@@ -84,36 +124,5 @@ public class ListServicesAdapter  extends BaseAdapter {
 
 
     }
-    public final static int[] services_string = {
-            R.string.drawer_item_service_sp,
-            R.string.drawer_item_service_htmlweb,
-            R.string.drawer_item_service_numbester
-    };
 
-    int[] DRAWABLES = {R.drawable.sp, R.drawable.htmlweb, R.drawable.numbuster};
-
-
-    private String getNameByTag(String tag) {
-        int type = 0;
-        switch (tag.toUpperCase()){
-            case "SP":   type = 0;break;
-            case "HTMLWEB":type = 1;break;
-            case "NUMBUSTER":type = 2;break;
-        }
-        return  mContext.getString(services_string[type]);
-    }
-
-    private Drawable getImageByTag(String tag) {
-        int type = 0;
-        Drawable dr = null;
-        switch (tag.toUpperCase()){
-            case "SP": type = 0; break;
-            case "HTMLWEB":type = 1;break;
-            case "NUMBUSTER":type = 2;break;
-        }
-        int id = DRAWABLES[type];
-        dr= mContext.getResources().getDrawable(id);
-
-        return dr;
-    }
 }

@@ -3,10 +3,13 @@ package dmitry.ru.infocall;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.Toast;
 
-import dmitry.ru.infocall.service.CallReceiver;
+import java.util.Arrays;
+import java.util.List;
+
+import dmitry.ru.infocall.service.MyService;
 import dmitry.ru.infocall.utils.Setting;
+import dmitry.ru.myapplication.BuildConfig;
 
 /**
  * Created by User on 21.02.2017.
@@ -29,6 +32,8 @@ public class InfoCallApplication extends Application {
     @Override
     public void onCreate() {
 
+
+
         super.onCreate();
 
 
@@ -38,17 +43,36 @@ public class InfoCallApplication extends Application {
         boolean isInit = Setting.getBool(INIT_TAG);
 
         if (!isInit) {
-            this.startService(
-                    new Intent(this, CallReceiver.class));
-            Toast.makeText(this, "Служба InfoCall запущена",
-                    Toast.LENGTH_SHORT).show();
-
             Setting.setBool(INIT_TAG, true);
             Setting.setBool( Setting.START_INFOCALL_TAG, true);
+
+            Intent service = new Intent(this, MyService.class);
+            this.startService(service);
+
+
+            List<String> list = Arrays.asList(SettingServers.APP_LIST_SERVICE);
+
+            int i = 0;
+            for(String e : list){
+                boolean bl = SettingServers.isNeedAccesToken(e);
+                Setting.setBool(e,!bl);
+                i++;
+            }
+
         }
 
 
 
+
+        test();
+
+    }
+
+    private void test() {
+
+        if (!BuildConfig.DEBUG) {
+            return;
+        }
 
     }
 }
