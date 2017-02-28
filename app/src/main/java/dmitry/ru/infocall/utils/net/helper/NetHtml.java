@@ -32,7 +32,7 @@ public class NetHtml {
     private static ExecutorService pool = Executors.newFixedThreadPool(20);
 
     static String cacheId = "NetHtml";
-    static Cache<String, String> cache;
+    static Cache cache;
 
 
     public static void requestHTMLAsync(final String url,
@@ -40,7 +40,7 @@ public class NetHtml {
 
         final int maxMemory = (int) (Runtime.getRuntime().maxMemory());
         final int cacheSize = maxMemory / 8;
-        cache = new Cache<>(NetHtml.cacheId, context);
+        cache = new Cache(NetHtml.cacheId, context);
 
         pool.execute(new Runnable() {
 
@@ -55,7 +55,7 @@ public class NetHtml {
                     if(cache!= null)
                          html = cache.get(cacheKey);
 
-                    if (html != null)
+                    if (html != null && !html.isEmpty())
                         doc = Jsoup.parse(html);
 
                     if (doc == null) {

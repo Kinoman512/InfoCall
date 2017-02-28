@@ -2,12 +2,10 @@ package dmitry.ru.infocall;
 
 import android.app.Application;
 import android.content.Context;
-import android.content.Intent;
 
 import java.util.Arrays;
 import java.util.List;
 
-import dmitry.ru.infocall.service.MyService;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.myapplication.BuildConfig;
 
@@ -33,7 +31,6 @@ public class InfoCallApplication extends Application {
     public void onCreate() {
 
 
-
         super.onCreate();
 
 
@@ -44,24 +41,22 @@ public class InfoCallApplication extends Application {
 
         if (!isInit) {
             Setting.setBool(INIT_TAG, true);
-            Setting.setBool( Setting.START_INFOCALL_TAG, true);
+            Setting.setBool(Setting.START_INFOCALL_TAG, true);
 
-            Intent service = new Intent(this, MyService.class);
-            this.startService(service);
+//            Intent service = new Intent(this, MyService.class);
+//            this.startService(service);
 
 
             List<String> list = Arrays.asList(SettingServers.APP_LIST_SERVICE);
 
             int i = 0;
-            for(String e : list){
+            for (String e : list) {
                 boolean bl = SettingServers.isNeedAccesToken(e);
-                Setting.setBool(e,!bl);
+                Setting.setBool(e, !bl);
                 i++;
             }
 
         }
-
-
 
 
         test();
@@ -73,6 +68,13 @@ public class InfoCallApplication extends Application {
         if (!BuildConfig.DEBUG) {
             return;
         }
+
+
+//        Cache<String, Serializer> cache = new Cache<String, Serializer>("123", this);
+//        Serializer ser2 = new Serializer("12345667");
+//        cache.put("1", ser2);
+//        Serializer ser = cache.get("1");
+
 
     }
 }

@@ -1,6 +1,5 @@
 package dmitry.ru.infocall.view;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -18,7 +17,6 @@ import dmitry.ru.infocall.MainActivity;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.fragment.JourneyFragment;
 import dmitry.ru.infocall.fragment.ServicesFragment;
-import dmitry.ru.infocall.service.MyService;
 import dmitry.ru.infocall.utils.ContactService;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.myapplication.R;
@@ -59,17 +57,17 @@ public class DrawPanel {
                             SecondarySwitchDrawerItem sd = (SecondarySwitchDrawerItem) drawerItem;
 
 //                                result.updateItem(sd);
-
-                            if(isChecked){
-
-                                Intent service = new Intent(activity, MyService.class);
-                                activity.startService(service);
-
-                            }else {
-
-                                Intent service = new Intent(activity, MyService.class);
-                                activity.stopService(service);
-                            }
+//
+//                            if(isChecked){
+//
+//                                Intent service = new Intent(activity, MyService.class);
+//                                activity.startService(service);
+//
+//                            }else {
+//
+//                                Intent service = new Intent(activity, MyService.class);
+//                                activity.stopService(service);
+//                            }
 
 
                             Setting.setBool( Setting.START_INFOCALL_TAG, isChecked);

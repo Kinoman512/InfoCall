@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 import dmitry.ru.infocall.MyDrawer;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.utils.ContactService;
+import dmitry.ru.infocall.utils.Setting;
 
 /**
  * Created by Dmitry on 04.02.2016.
@@ -31,6 +32,12 @@ public class CallReceiver extends PhonecallReceiver {
 //        number = "79044404193";
 
         //Toast.makeText(context, number , Toast.LENGTH_LONG).show();
+
+        boolean isNeedStart = Setting.getBool( Setting.START_INFOCALL_TAG);
+
+        if(!isNeedStart){
+            return;
+        }
 
         UserHandler uh = new UserHandler( number ,context,false );
         uh.isLockedScreen = true;

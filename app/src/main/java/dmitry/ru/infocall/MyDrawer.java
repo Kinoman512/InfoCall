@@ -2,12 +2,14 @@ package dmitry.ru.infocall;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -48,6 +50,8 @@ public class MyDrawer {
     private static int mPosX;
     private static int mPosY;
     private static String  MyDrawerTag = "MyDrawerTag";
+    private static String  My_TIPS_TAG = "TIPS_DRAWER";
+    private static View tips_overlay_info_window;
 
 
     public static void rewrite(LinkedHashMap<String, String> map) {
@@ -115,6 +119,26 @@ public class MyDrawer {
 
 
         windowLayout = (ViewGroup) layoutInflater.inflate(R.layout.info, null);
+        tips_overlay_info_window = (View) windowLayout.findViewById(R.id.tips_overlay_info_window);
+        View content_info = (View) windowLayout.findViewById(R.id.content_info);
+        View root_info = (View) windowLayout.findViewById(R.id.root_info);
+
+        boolean skipTips = Setting.getBool(My_TIPS_TAG);
+        if(needBtns && !skipTips ){
+            root_info.setBackgroundColor(Color.WHITE);
+            content_info.setAlpha(1);
+            tips_overlay_info_window.setVisibility(View.VISIBLE);
+            tips_overlay_info_window.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    tips_overlay_info_window.setVisibility(View.GONE);
+                    Setting.setBool(My_TIPS_TAG,true);
+                    return false;
+                }
+            });
+        }else {
+            tips_overlay_info_window.setVisibility(View.GONE);
+        }
         img = (ImageView)  windowLayout.findViewById(R.id.imageView);
          listNumberData = (ListView)  windowLayout.findViewById( R.id.list_number_data ) ;
 
@@ -223,6 +247,7 @@ public class MyDrawer {
         RunMainThread.runOnUiThread(context, new Runnable() {
             @Override
             public void run() {
+                closeWindow();
                 Log.d(MyDrawerTag, " get listner!!!");
                 windowManager.addView(windowLayout, params);
             }
@@ -233,12 +258,8 @@ public class MyDrawer {
         //ImageView img = (ImageView)  windowLayout.findViewById(R.id.imageView);
         if(ishown){
 
-            int w = 180;
-            int h = 180;
 
-            Bitmap bm2 = Bitmap.createScaledBitmap(bm, w,
-                    h, false);
-            img.setImageBitmap(bm2);
+            img.setImageBitmap(bm);
 
 //            myView.setAvatar(img);
         }
@@ -260,10 +281,16 @@ public class MyDrawer {
     }
 
     public static void closeWindow() {
-        if (windowLayout !=null){
-            ishown= false;
-            windowManager.removeView(windowLayout);
-            windowLayout =null;
+
+        try{
+            if (windowLayout !=null){
+                ishown= false;
+                windowManager.removeView(windowLayout);
+                windowLayout =null;
+            }
+        }catch (Exception e){
+
         }
+
     }
 }

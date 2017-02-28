@@ -47,9 +47,12 @@ public class ContactService {
         Context con = uh.context;
         String phone = uh.phone;
         boolean isEmptyNumber;
+        int count = phone.length();
 
-
-        phone = "7" + phone.substring(1);
+        char c  = phone.charAt(0);
+        if(count == 11 && c == '8'){
+            phone = "7" + phone.substring(1);
+        }
         Log.d("ContactService", phone);
         uh.phone = phone;
         isEmptyNumber = ContactUtil.getContactInfo(con, phone).isEmpty();

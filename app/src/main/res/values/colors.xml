@@ -51,4 +51,5 @@
     <color name="OrangeA200">#ffab40</color>
     <color name="OrangeA400">#ff9100</color>
     <color name="OrangeA700">#ff6d00</color>
+    <color name="blue_tip_text">#2c75ff</color>
 </resources>

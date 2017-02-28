@@ -59,7 +59,7 @@ public class SettingServers {
     }
 
     static String token_numbuster = "4hai9edgtokkckw4kc08sgw0o000skswk008cgw408goo0404w";
-    static String token_htmlweb = "e183d75e129c958aa5320a099390eb90";
+    static String token_htmlweb = "3f735098616a745fdafd5d8e4ddcc366";
 
     public static String getDefaultToken(String tag) {
 

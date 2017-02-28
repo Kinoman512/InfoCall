@@ -27,7 +27,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import dmitry.ru.infocall.Cache;
-import dmitry.ru.infocall.Serializer;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.tasks.Sp2All;
 
@@ -49,7 +48,7 @@ public class NetJson {
     };
 
     static String cacheId = "NetJson";
-    static Cache<String, Serializer> cache;
+    static Cache cache;
 
     public static void requestJSONAsync(final String url,
                                         final ArrayList<NameValuePair> params, final String authtoken, final Handler handler, final Context context) {
@@ -61,22 +60,21 @@ public class NetJson {
                 try {
 
                     try {
-                        cache = new Cache<>(NetJson.cacheId, context);
+                        cache = new Cache(NetJson.cacheId, context);
 
                     }catch (Exception e){
 
                     }
                     String cacheKey = url + params.toString();
-                    Serializer ser = cache.get(cacheKey);
+                    String ser = cache.get(cacheKey);
 
-                    if(ser != null)
-                         json = new JSONObject(ser.getData());
+                    if(ser != null && !ser.isEmpty())
+                         json = new JSONObject(ser);
 
                     if(json == null){
                         json = requestJSON(url, params, authtoken);
 
-                        Serializer ser2 =  new Serializer(json.toString());
-                        cache.put(cacheKey,ser2);
+                        cache.put(cacheKey,json.toString());
                     }
 
                     Log.i("NetworkUtil", "123" + json.toString());
