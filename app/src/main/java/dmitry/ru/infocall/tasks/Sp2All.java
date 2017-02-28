@@ -4,13 +4,17 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 
+import dmitry.ru.infocall.RunMainThread;
+import dmitry.ru.infocall.SettingServers;
 import dmitry.ru.infocall.UserHandler;
+import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.infocall.utils.net.helper.NetJson;
 
 /**
@@ -63,19 +67,32 @@ public class Sp2All  extends AsyncTask<UserHandler, Void, String> {
     protected String doInBackground(UserHandler... params) {
         UserHandler handler = params[0];
 
-        String username = handler.user;
-        String password = handler.pass;
+//        String username = handler.user;
+//        String password = handler.pass;
+        String tag = SettingServers.APP_LIST_SERVICE[0];
+
+        String pass = Setting.getString("pass_" + tag);
+        String login = Setting.getString("login_" + tag);
+
+
+        if(pass == null || pass.isEmpty() || login == null || login.isEmpty() ){
+
+            RunMainThread.runOnUiThread(context, new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(context,"Вы должны установить ключ для sp2all", Toast.LENGTH_LONG).show();
+                }
+            });
+            return null;
+        }
+
+
         String phone = handler.phone;
 
 
         if (handler.getLog() == null) {
 
-            login(username, password, handler.loginhandler);
-//            while (handler.getLog() == null) {
-//                    Log.d("Sp2AllTask", "wait my auth for user " + phone + handler.loginSp2AllData);
-//                    if (System.currentTimeMillis() - waitResponse > startTime) return null;
-//
-//            }
+            login(login, pass, handler.loginhandler);
         }
 
         Log.d("Sp2AllTask", "i try to get data from  sp2all for " + phone);

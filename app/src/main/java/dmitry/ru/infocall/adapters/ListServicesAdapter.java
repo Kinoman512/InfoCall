@@ -10,14 +10,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Arrays;
 import java.util.List;
 
 import dmitry.ru.infocall.SettingServers;
 import dmitry.ru.infocall.utils.Setting;
-import dmitry.ru.infocall.view.DialogSetToken;
+import dmitry.ru.infocall.view.DialogLogin;
 import dmitry.ru.myapplication.R;
 
 import static dmitry.ru.infocall.SettingServers.getImageByTag;
@@ -72,6 +71,7 @@ public class ListServicesAdapter  extends BaseAdapter {
 
 
             final boolean needAcces = isNeedAccesToken(tag);
+
             boolean isChecked = Setting.getBool(tag);
 
             checkbox_service.setChecked(isChecked);
@@ -81,10 +81,16 @@ public class ListServicesAdapter  extends BaseAdapter {
 
                     if(isChecked && needAcces){
 
-                        String token = Setting.getString("token" + tag);
-                        if(token == null || token.isEmpty()){
+                        String pass = Setting.getString("pass_" + tag);
+                        String login = Setting.getString("login_" + tag);
+
+
+                        if(pass == null || pass.isEmpty() || login == null || login.isEmpty() ){
+
                             checkbox_service.setChecked(false);
-                            Toast.makeText(mContext,"Вы должны установить ключ для этого сервиса", Toast.LENGTH_LONG).show();
+                            DialogLogin dl =new DialogLogin(mContext,tag, checkbox_service);
+                            dl.show();
+                           // Toast.makeText(mContext,"Вы должны установить ключ для этого сервиса", Toast.LENGTH_LONG).show();
                             return;
                         }
                     }
@@ -95,7 +101,7 @@ public class ListServicesAdapter  extends BaseAdapter {
                 someView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DialogSetToken dst = new DialogSetToken(mContext,tag);
+                        DialogLogin dst = new DialogLogin(mContext,tag, checkbox_service);
                         dst.show();
                     }
                 });

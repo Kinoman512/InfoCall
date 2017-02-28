@@ -25,9 +25,9 @@ public class SettingServers {
 
     public static  boolean isNeedAccesToken(String tag) {
         switch (tag.toUpperCase()){
-            case "SP":    return false;
+            case "SP":    return true;
             case "HTMLWEB": return true;
-            case "NUMBUSTER": return true;
+            case "NUMBUSTER": return false;
         }
         return  false;
     }
@@ -40,6 +40,15 @@ public class SettingServers {
             case "NUMBUSTER":type = 2;break;
         }
         return  context.getString(services_string[type]);
+    }
+
+    public static String getUrlByTag( String tag) {
+        switch (tag.toUpperCase()){
+            case "SP":  return  "https://sp2all.ru/registration/";
+            case "HTMLWEB": return "https://htmlweb.ru/user/signup.php?";
+//            case "NUMBUSTER":type = 2;break;
+        }
+        return   "";
     }
 
 
@@ -61,6 +70,15 @@ public class SettingServers {
     static String token_numbuster = "4hai9edgtokkckw4kc08sgw0o000skswk008cgw408goo0404w";
     static String token_htmlweb = "3f735098616a745fdafd5d8e4ddcc366";
 
+    static String login_sp = "Kinoman512";
+    static String login_htmlweb = "Kinoman512";
+
+    static String pass_sp = "074d0c3";
+    static String pass_htmlweb = "Saboteur1";
+
+
+
+
     public static String getDefaultToken(String tag) {
 
         switch (tag.toUpperCase()) {
@@ -68,6 +86,30 @@ public class SettingServers {
                 return token_htmlweb;
             case "NUMBUSTER":
                 return token_numbuster;
+        }
+        return "";
+
+    }
+    public static String getDefaultLogin(String tag) {
+
+        switch (tag.toUpperCase()) {
+            case "SP":
+                return login_sp;
+            case "HTMLWEB":
+                return login_htmlweb;
+
+        }
+        return "";
+
+    }
+    public static String getDefaultPass(String tag) {
+
+        switch (tag.toUpperCase()) {
+            case "SP":
+                return pass_sp;
+            case "HTMLWEB":
+                return pass_htmlweb;
+
         }
         return "";
 

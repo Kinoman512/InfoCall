@@ -19,6 +19,7 @@ import java.util.Map;
 import cz.msebera.android.httpclient.Header;
 import dmitry.ru.infocall.Cache;
 import dmitry.ru.infocall.RunMainThread;
+import dmitry.ru.infocall.SettingServers;
 import dmitry.ru.infocall.UserHandler;
 import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.infocall.utils.net.helper.NetHtml;
@@ -43,8 +44,9 @@ public class HtmlwebTask extends AsyncTask<UserHandler, Void, String> {
     private static String API_key;
 
 
-    static String username = "Kinoman512";
-    static String password = "Saboteur1";
+    static String username = "";
+    static String password = "";
+
     private String phone;
     private UserHandler userHandler;
 
@@ -142,6 +144,8 @@ public class HtmlwebTask extends AsyncTask<UserHandler, Void, String> {
             if (json == null) {
                 txtHttpResponse.setConfig(handler, url);
                 client.post(url,  txtHttpResponse);
+            }else{
+                Message.obtain(handler, UserHandler.OK, json).sendToTarget();
             }
         } catch (Exception e) {
 
@@ -184,6 +188,23 @@ public class HtmlwebTask extends AsyncTask<UserHandler, Void, String> {
 
         userHandler = params[0];
         phone = userHandler.phone;
+
+
+        String tag = SettingServers.APP_LIST_SERVICE[1];
+        password = Setting.getString("pass_" + tag);
+        username = Setting.getString("login_" + tag);
+
+
+        if(password == null || password.isEmpty() || username == null || username.isEmpty() ){
+
+            RunMainThread.runOnUiThread(context, new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(context,"Вы должны установить ключ для htmlweb", Toast.LENGTH_LONG).show();
+                }
+            });
+            return null;
+        }
 
         API_key = Setting.getString("api_key_html" + username);
 

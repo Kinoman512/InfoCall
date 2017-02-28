@@ -52,8 +52,8 @@ public class UserHandler {
     public LinkedHashMap<String, String> forSave = new LinkedHashMap<>();
     public JSONObject loginSp2AllData;
 
-    public String user = "Kinoman512";
-    public String pass = "074d0c3";
+    public String user = "";
+    public String pass = "";
     public String avatarUrl = "";
     public String phone;
     public String userName = "";

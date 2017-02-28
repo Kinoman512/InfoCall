@@ -11,9 +11,9 @@ import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 
+import dmitry.ru.infocall.RunMainThread;
 import dmitry.ru.infocall.SettingServers;
 import dmitry.ru.infocall.UserHandler;
-import dmitry.ru.infocall.utils.Setting;
 import dmitry.ru.infocall.utils.net.helper.NetJson;
 
 /**
@@ -46,12 +46,17 @@ public class NumbusterTask extends AsyncTask<UserHandler, Void, String> {
     protected String doInBackground(UserHandler... params) {
         UserHandler uh = params[0];
         String phone = uh.phone;
+        String tag = SettingServers.APP_LIST_SERVICE[2];
 
-
-        String token = Setting.getString("token" +SettingServers.APP_LIST_SERVICE[2] );
+        String token = SettingServers.getDefaultToken( tag);//Setting.getString("token" + );
 
         if(token == null || token.isEmpty()){
-            Toast.makeText(context,"Нет ключа для Numbuster",Toast.LENGTH_LONG).show();
+            RunMainThread.runOnUiThread(context, new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(context,"Нет ключа для Numbuster",Toast.LENGTH_LONG).show();
+                }
+            });
             return null;
         }
 
